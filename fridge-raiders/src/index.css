@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+}
+
+i {
+  padding: 1rem;
+  font-size: 2.5rem;
+  color: white;
+}
+
+section {
+  width: 90%;
+  margin: auto;
+}
+
+button {
+  width:6rem;
+  height:3rem;
+  margin: 1rem;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  margin-right: 0.3rem;
+}
+
+.nav {
+    display: flex;
+    height: 100px;
+    width: auto;
+    background-color: green;
+}
+  
+.nav_icon {
+    align-self: center;
+    margin-left: auto;
+}
+  
+.nav_logo {
+    align-self: center;
+    margin-right: auto;
+}
+
+.checkbox {
+  padding: 0.5rem 0rem;
+}
+
+
+
