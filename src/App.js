@@ -1,7 +1,9 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import Nav from './Nav/Nav';
-import LandingPage from './LandingPage/LandingPage';
+// import LandingPage from './LandingPage/LandingPage';
+// import GroceryList from './GroceryList/GroceryList';
+// import Login from './Login/Login';
 import Dashboard from './Dashboard/Dashboard';
 import Footer from './Footer/Footer';
 
@@ -12,13 +14,13 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://')
+    fetch('./DummyData/data.json')
     .then(res => res.json())
     .then(res => this.setState({items:res}))  
     // get items from backend
   }
 
-  addItems = (item) => {
+  addItem = (item) => {
     console.log(item)
     const newItems = this.state.items;
     newItems.push(item);
@@ -45,7 +47,7 @@ export default class App extends React.Component {
             <div className='group'>
               <div className='item'>
                 <Link to='/'>
-                  <span className='logo'>TITLE</span>
+                  <span className='logo'>Fridge Raiders</span>
                   <br></br>
                   <span><i></i></span>
                 </Link>              
@@ -55,15 +57,23 @@ export default class App extends React.Component {
               </div>
             </div>            
           </header>
-          <Route exact path='/'>
-            <Dashboard setSearchTerm={this.setSearchTerm} items={this.search()}/>
-          </Route>   
-          {/* <Route path='/discover'>
+          {/* <Route path='/'>
             <LandingPage />
           </Route>           */}
+          <Route exact path='/'>
+            <Dashboard setSearchTerm={this.setSearchTerm} items={this.search()}/>
+          </Route>
+          {/* <Route path='/Grocery-List'>
+            <GroceryList />
+          </Route>    */}
+          {/* <Route path='/Login'>
+            <Login />
+            </Route> */}
+
+          
           {/* <Route path='/create' render={
             () => <CreateRecipe addItem={this.addItem}/>
-          }/>                         */}
+          }/> */}
         </main>
         <Footer/>        
       </div>

@@ -1,13 +1,253 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  text-align: left;
+  line-height: 1.5;
+  min-width: 320px;
+  /* background-image: url('./img/landing-page.jpeg'); */
+  
+  background-color: silver;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* Layout for header */
+
+header {
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  text-align: center;  
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: .75;
+}
+
+footer {
+  padding-top: 2rem;
+  padding-bottom: 1.5;
+  color: white;
+  text-align: center;
+}
+/* ---  Navigation --- */
+
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  
+}
+
+header h1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 0;
+}
+
+header nav ul li {
+  list-style-type: none;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  padding: 0 10px 0 10px;  
+}
+
+header nav ul li a:hover {
+  color: greenyellow;
+}
+
+header h1, a {
+  color: white;
+}
+
+/* sections */
+
+section {
+  padding: 30px 15px 20px 20px;
+  border: 0px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px black;
+}
+
+/* section:nth-child(odd) {
+  background-color: #EDE0D4;
+  color: #7F5539;
+} */
+
+/* section:nth-child(even) {
+  background-color: #B08968;
+  color: #EDE0D4;
+} */
+
+a {
+  text-decoration: none;
+  
+}
+
+a:hover {
+  color: greenyellow;
+}
+
+.logo{
+  font-size: xxx-large;  
+  padding: 0px;
+}
+
+span {
+  font-size: small;
+  padding: 0;
+}
+
+p, h2 {
+  margin: 23px 0;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+form {
+  margin: 0 auto;
+  padding: 0 0 40px;
+  max-width: 650px;
+}
+
+form.search input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid gray;
+  float: left;
+  width: 70%;
+  background: #f1f1f1;
+}
+
+form.search button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: greenyellow;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+div.add button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: greenyellow;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+div.remove button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: greenyellow;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.search::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+button {
+  margin: 0px 10px 0px 10px;
+}
+
+
+
+label p {
+  margin: 6px 0 23px;
+}
+
+p + p {
+  margin-top: 15px;  
+}
+
+form {
+  text-align: left;
+}
+
+label {
+  display: block;
+}
+
+input[type="range"] {
+  width: 50px;
+}
+
+.form-section {
+  margin-bottom: 15px;
+}
+
+.button-section {
+  padding: 0 0 0 15px;
+}
+
+.overview-section input,
+.overview-section textarea {
+  width: 100%;
+}
+
+.center {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Groups & Items  (Mobile First) */
+
+.group {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  flex: 1;
+  margin: 10px;
+}
+
+.item-double {
+  flex: 2;
+  margin: 10px;
+}
+
+/* Groups & Items  (Desktop) */
+
+@media all and (min-width: 800px) {
+  .wrapper {
+    width: 80%;
+    margin: auto;
+  }
+
+  .group {
+    flex-direction: row;
+  }
 }
