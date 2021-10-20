@@ -54,13 +54,13 @@ export default class App extends React.Component {
                 <Nav/>
               </div>
             </div>            
-          </header>   
+          </header>
           <Route exact path='/'>
-            <LandingPage />
-          </Route>
-          <Route path='/discover'>
             <Dashboard setSearchTerm={this.setSearchTerm} items={this.search()}/>
-          </Route>
+          </Route>   
+          {/* <Route path='/discover'>
+            <LandingPage />
+          </Route>           */}
           {/* <Route path='/create' render={
             () => <CreateRecipe addItem={this.addItem}/>
           }/>                         */}
