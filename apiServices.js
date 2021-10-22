@@ -1,6 +1,6 @@
 const AuthApiService = {
   postLogin({ username, password }) {
-    return fetch(`${process.env.REACT_APP_API_ENDPOINT}/auth/login`, {
+    return fetch(`${process.env.REACT_APP_API_ENDPOINT}/users/login`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -12,7 +12,7 @@ const AuthApiService = {
   },
 
   postUser(user) {
-    return fetch(`${process.env.REACT_APP_API_ENDPOINT}/auth/register`, {
+    return fetch(`${process.env.REACT_APP_API_ENDPOINT}/users/register`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
