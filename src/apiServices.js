@@ -1,11 +1,11 @@
 const ApiServices = {
-  postLogin({ username, password }) {
+  postLogin({ email, password }) {
     return fetch(`${process.env.REACT_APP_API_ENDPOINT}/users/login`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ email, password }),
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
