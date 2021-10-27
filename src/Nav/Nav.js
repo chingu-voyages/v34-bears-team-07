@@ -12,12 +12,12 @@ function Nav() {
             <Link to="/">My Pantry</Link>
           </li>
           {/* change above route to dashboard when landing page is implemented */}
-          <li>
+          {/* <li>
             <Link to="Grocery-List">Grocery List</Link>
           </li>
           <li>
             <Link to="Contact">Contact</Link>
-          </li>
+          </li> */}
           <li>
             <Link to="login">Login</Link>
           </li>

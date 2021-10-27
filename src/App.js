@@ -5,7 +5,7 @@ import Nav from "./Nav/Nav";
 // import GroceryList from './GroceryList/GroceryList';
 import Login from "./Login/Login";
 import Dashboard from "./Dashboard/Dashboard";
-import Footer from "./Footer/Footer";
+// import Footer from "./Footer/Footer";
 
 export default class App extends React.Component {
   state = {
@@ -82,7 +82,7 @@ export default class App extends React.Component {
             () => <CreateRecipe addItem={this.addItem}/>
           }/> */}
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
   }
