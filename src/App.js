@@ -6,6 +6,8 @@ import Nav from "./Nav/Nav";
 import Login from "./Login/Login";
 import Dashboard from "./Dashboard/Dashboard";
 // import Footer from "./Footer/Footer";
+import TokenServices from "./tokenServices";
+import ApiServices from "./apiServices";
 
 export default class App extends React.Component {
   state = {
@@ -14,10 +16,28 @@ export default class App extends React.Component {
   };
 
   componentDidMount() {
-    fetch("./DummyData/data.json")
-      .then((res) => res.json())
-      .then((res) => this.setState({ items: res }));
+    // fetch("./DummyData/data.json")
+    //   .then((res) => res.json())
+    //   .then((res) => this.setState({ items: res }));
     // get items from backend
+    fetch(
+      `${process.env.REACT_APP_API_ENDPOINT}/users/6169b723c8b69562f7017d33`,
+      {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+          Authorization:
+            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNzM0NTJiNjJmOTUxNmVlZWM4YzE1MyIsImlhdCI6MTYzNTU0ODExNn0.qsy9ToMr0vJUeYF7OnKIp_qiGNBo-o0dhsV82EV1YiA",
+        },
+      }
+    )
+      .then((res) =>
+        !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+      )
+      .then((data) => {
+        console.log(data.user.pantry);
+        this.setState({ items: data.user.pantry });
+      });
   }
 
   addItem = (item) => {
@@ -67,7 +87,8 @@ export default class App extends React.Component {
           <Route exact path="/">
             <Dashboard
               setSearchTerm={this.setSearchTerm}
-              items={this.search()}
+              // items={this.search()}
+              items={this.state.items}
             />
           </Route>
           <Route exact path="/login" component={Login} />
