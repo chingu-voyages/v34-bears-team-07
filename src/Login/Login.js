@@ -29,7 +29,7 @@ function Login() {
       });
   };
   return (
-    <>
+    <React.Fragment>
       <form onSubmit={handleSubmit}>
         <label htmlFor="email">Email</label>
         <input
@@ -53,7 +53,7 @@ function Login() {
           <button>Create New Account</button>
         </Link>
       </form>
-    </>
+    </React.Fragment>
   );
 }
 
