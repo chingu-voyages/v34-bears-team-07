@@ -71,8 +71,7 @@ export default class App extends React.Component {
           <Route exact path="/">
             <Dashboard
               setSearchTerm={this.setSearchTerm}
-              // items={this.search()}
-              items={this.state.items}
+              items={this.search()}
             />
           </Route>
           <Route exact path="/login" component={Login} />

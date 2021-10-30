@@ -33,6 +33,7 @@ function Dashboard(props) {
           </button>
         </div>
       </div>
+      {/* items is coming from prop history */}
       {props.items.map((item, idx) => (
         <Item key={idx} item={item} />
       ))}
