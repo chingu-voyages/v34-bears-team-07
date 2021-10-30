@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ApiServices from "../apiServices";
 import TokenServices from "../tokenServices";
@@ -25,20 +25,20 @@ function Login() {
 
       .catch((res) => {
         setError(res);
-        console.log(res);
+        console.log(error);
       });
   };
   return (
-    <>
+    <React.Fragment>
       <form onSubmit={handleSubmit}>
-        <label for="email">Email</label>
+        <label htmlFor="email">Email</label>
         <input
           type="text"
           id="email"
           name="email"
           placeholder="meow@meow.com"
         />
-        <label for="password" id="password" name="password">
+        <label htmlFor="password" id="password" name="password">
           Password
         </label>
         <input
@@ -53,7 +53,7 @@ function Login() {
           <button>Create New Account</button>
         </Link>
       </form>
-    </>
+    </React.Fragment>
   );
 }
 

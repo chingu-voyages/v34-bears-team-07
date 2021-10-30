@@ -7,6 +7,8 @@ import Login from "./Login/Login";
 import ItemSearch from "./Item/ItemSearch";
 import Dashboard from "./Dashboard/Dashboard";
 // import Footer from "./Footer/Footer";
+import TokenServices from "./tokenServices";
+import ApiServices from "./apiServices";
 
 export default class App extends React.Component {
     state = {
@@ -15,10 +17,12 @@ export default class App extends React.Component {
     };
 
     componentDidMount() {
-        fetch("./DummyData/data.json")
-            .then((res) => res.json())
-            .then((res) => this.setState({ items: res }));
-        // get items from backend
+        ApiServices.getUser(
+            "616c8fc418acccb07603d9eb",
+            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNmM4ZmM0MThhY2NjYjA3NjAzZDllYiIsImlhdCI6MTYzNTYwNDg1N30.e9yFVloPVSj4yvJ6RZkRYvrmAXOcDvRlQ0vR1He_EM8"
+        ).then((data) => {
+            this.setState({ items: data.user.pantry });
+        });
     }
 
     addItem = (item) => {
