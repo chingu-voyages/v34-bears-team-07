@@ -5,7 +5,7 @@ function Item(props) {
     <section className="form-section">
       <div className="group">
         <div className="item">
-          <h2>{props.item.name}</h2>
+          <h2>{props.item.itemName}</h2>
         </div>
         <div className="item">
           <h3>
