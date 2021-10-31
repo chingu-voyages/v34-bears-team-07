@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import ApiServices from "../apiServices";
+import ItemCard from "./ItemCard";
 
 const ItemSearch = () => {
     const inputEl = useRef(null);
@@ -20,7 +21,6 @@ const ItemSearch = () => {
     }, [text]);
 
     function handleChange(e) {
-        // console.log("value", e.target.value);
         setText(e.target.value);
     }
 
@@ -40,7 +40,9 @@ const ItemSearch = () => {
             {items && items.length ? (
                 <ul>
                     {items.map((item) => (
-                        <li>{item.name}</li>
+                        <li>
+                            <ItemCard key={item.id} item={item} />
+                        </li>
                     ))}
                 </ul>
             ) : null}

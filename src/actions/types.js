@@ -1,1 +1,2 @@
-export const SEARCH_ITEMS = "SEARCH_ITEMS";
+export const ADD_ITEM = "ADD_ITEM";
+export const CHANGE_QTY = "CHANGE_QTY";

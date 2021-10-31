@@ -1,16 +1,16 @@
-import ApiServices from "../apiServices";
-import { SEARCH_ITEMS } from "./types";
+import { ADD_ITEM, CHANGE_QTY } from "./types";
 
-export function fetchItemsfromAPI(keyWord) {
-    return async function (dispatch) {
-        const items = await ApiServices.getItems(keyWord);
-        return dispatch(getItems(items));
+export function addToList(item) {
+    return {
+        type: ADD_ITEM,
+        item,
     };
 }
 
-function getItems(items) {
+export function removeFromList(itemId, qty) {
     return {
-        type: SEARCH_ITEMS,
-        items,
+        type: CHANGE_QTY,
+        itemId,
+        qty,
     };
 }
