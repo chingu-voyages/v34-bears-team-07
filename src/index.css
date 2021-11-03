@@ -41,7 +41,7 @@ footer {
 header nav {
   display: flex;
   flex-direction: row;
-  justify-content: center;  
+  justify-content: right;  
 }
 
 header h1 {
@@ -76,7 +76,7 @@ header h1, a {
 /* sections */
 
 section {
-  padding: 30px 15px 20px 20px;
+  padding: 0px 15px 20px 15px;
   border: 0px;
   border-radius: 15px;
   box-shadow: 0 0 10px black;
@@ -143,11 +143,10 @@ form.search button {
   color: white;
   font-size: 17px;
   border: 1px solid grey;
-  border-left: none;
   cursor: pointer;
 }
 
-div.add button {
+.add-icon button {
   float: left;
   width: 20%;
   padding: 10px;
@@ -155,8 +154,7 @@ div.add button {
   color: white;
   font-size: 17px;
   border: 1px solid grey;
-  border-left: none;
-  cursor: pointer;
+  cursor: pointer;  
 }
 
 div.remove button {
@@ -229,7 +227,7 @@ input[type="range"] {
   flex-direction: column;
 }
 
-.item {
+.item-single {
   flex: 1;
   margin: 10px;
 }
