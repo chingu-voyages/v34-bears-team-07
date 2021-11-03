@@ -40,6 +40,7 @@ function Login() {
         <div className="login center">          
           <form onSubmit={handleSubmit}>
             <div>
+            <div className="login-container">
               <label htmlFor="email">Email</label>
               <input
                 type="text"
@@ -56,16 +57,16 @@ function Login() {
                 name="password"
                 placeholder="Meow"
               />
-            </div>
             <div className="center">
               <button type="submit">Login</button>
             </div>
+            </div>
+            </div>
             <div className="center">
-              <p>OR</p>
             </div>
             <div className="center">
               <Link to="/register">
-                <button>Create New Account</button>
+                <button className="register">Create New Account</button>
               </Link>
             </div>              
           </form>

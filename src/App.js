@@ -4,6 +4,7 @@ import Nav from "./Nav/Nav";
 // import LandingPage from './LandingPage/LandingPage';
 // import GroceryList from './GroceryList/GroceryList';
 import Login from "./Login/Login";
+import SignUp from "./SignUp/SignUp";
 import Dashboard from "./Dashboard/Dashboard";
 // import Footer from "./Footer/Footer";
 import TokenServices from "./tokenServices";
@@ -75,6 +76,7 @@ export default class App extends React.Component {
             />
           </Route>
           <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={SignUp} />
           {/* <Route path='/Grocery-List'>
             <GroceryList />
           </Route>    */}
