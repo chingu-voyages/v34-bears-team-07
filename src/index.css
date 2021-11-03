@@ -1,16 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo&family=Fjalla+One&display=swap');
+
 * {
   box-sizing: border-box;
+   font-family: 'Archivo';
+}
+
+i {
+  color: black;
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
   font-size: 20px;
   text-align: left;
   line-height: 1.5;
   min-width: 320px;
   /* background-image: url('./img/landing-page.jpeg'); */
   
-  background-color: silver;
+  background-color: rgb(58, 57, 57);
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -18,11 +24,15 @@ body {
   background-position: center;
 }
 
+.container-bg {
+  background-color: rgb(154, 153, 153);;
+}
+
 /* Layout for header */
 
 header {
   padding-top: 2rem;
-  padding-bottom: 1.5rem;
+  /* padding-bottom: 1.5rem; */
   text-align: center;  
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
@@ -41,7 +51,7 @@ footer {
 header nav {
   display: flex;
   flex-direction: row;
-  justify-content: right;  
+  justify-content: right; 
 }
 
 header h1 {
@@ -182,8 +192,11 @@ button {
 
 /* Login/Sign Up Styling */
 .login-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   border-radius: 5px;
-  padding: 25px;
+  padding: 20px;
   margin-bottom: 10px;
   background-color: rgb(235, 233, 233);
   border: 1px black solid;
@@ -203,6 +216,11 @@ button {
   cursor: pointer;  
 }
 
+.login form {
+  width: 300px;
+
+}
+
 .register {
   margin: 8px;
   background-color: rgb(0, 136, 255);
@@ -216,7 +234,7 @@ button {
 
 .login p {
   font-size: 16px;
-  margin: 8px;
+  margin: 0px;
 }
 label p {
   margin: 6px 0 23px;

@@ -39,27 +39,25 @@ function Login() {
         </div>      
         <div className="login center">          
           <form onSubmit={handleSubmit}>
-            <div>
             <div className="login-container">
-              <label htmlFor="email">Email</label>
+              {/* <label htmlFor="email">Email</label> */}
               <input
                 type="text"
                 id="email"
                 name="email"
-                placeholder="meow@meow.com"
+                placeholder="Email"
               />
-              <label htmlFor="password" id="password" name="password">
+              {/* <label htmlFor="password" id="password" name="password">
                 Password
-              </label>
+              </label> */}
               <input
                 type="password"
                 id="password"
                 name="password"
-                placeholder="Meow"
+                placeholder="Password"
               />
             <div className="center">
               <button type="submit">Login</button>
-            </div>
             </div>
             </div>
             <div className="center">

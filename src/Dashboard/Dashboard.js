@@ -10,7 +10,7 @@ function Dashboard(props) {
       </header>
       
       <div className="group">
-        <section className="item-double current-items ">          
+        <section className="item-double current-items container-bg">          
           <h2 className="center">Current Items</h2>                      
           <br/>
             <div className="form-section">
@@ -33,7 +33,7 @@ function Dashboard(props) {
           </div>
         </section>
         
-        <section className="add-icon item-single add-items">
+        <section className="add-icon item-single add-items container-bg">
           <h2 className="center">Add Items</h2>
           <br/>
           <div className="center">
