@@ -1,3 +1,5 @@
+import jwt from "jsonwebtoken";
+
 const TokenServices = {
   saveAuthToken(token) {
     window.localStorage.setItem(process.env.REACT_APP_TOKEN_KEY, token);
@@ -11,8 +13,9 @@ const TokenServices = {
   hasAuthToken() {
     return !!TokenServices.getAuthToken();
   },
-  makeBasicAuthToken(userName, password) {
-    return window.btoa(`${userName}:${password}`);
+  decodeToken() {
+    const token = window.localStorage.getItem(process.env.REACT_APP_TOKEN_KEY);
+    return jwt.verify(token, process.env.REACT_APP_TOKEN_KEY);
   },
 };
 
