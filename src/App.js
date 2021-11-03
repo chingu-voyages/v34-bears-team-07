@@ -6,22 +6,27 @@ import Nav from "./Nav/Nav";
 import Login from "./Login/Login";
 import Dashboard from "./Dashboard/Dashboard";
 // import Footer from "./Footer/Footer";
-import TokenServices from "./tokenServices";
-import ApiServices from "./apiServices";
 import SignUp from "./SignUp/SignUp";
+import ApiServices from "./apiServices";
 
 export default class App extends React.Component {
   state = {
     items: [],
     searchTerm: "",
+    id: "",
+    token: "",
+    msg: "",
   };
+  // componentDidMount() {
+  //   console.log("test");
+  // }
 
-  componentDidMount() {
+  componentDidUpdate() {
     ApiServices.getUser(
       // email: testwy1@test.com
       // password: 123
-      "616c8fc418acccb07603d9eb",
-      "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNmM4ZmM0MThhY2NjYjA3NjAzZDllYiIsImlhdCI6MTYzNTk1OTQzMH0.PZOkVavceKYz9flmyO6YBB9DJJGNo0o4Z6XgvLp6PaU"
+      this.state.id,
+      `bearer ${this.state.token}`
     ).then((data) => {
       this.setState({ items: data.user.pantry });
     });
@@ -46,6 +51,14 @@ export default class App extends React.Component {
 
   setSearchTerm = (term) => {
     this.setState({ searchTerm: term });
+  };
+
+  setId = (id) => {
+    this.setState({ id: id });
+  };
+
+  setToken = (newToken) => {
+    this.setState({ token: newToken });
   };
 
   render() {
@@ -77,7 +90,9 @@ export default class App extends React.Component {
               items={this.search()}
             />
           </Route>
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/login">
+            <Login setId={this.setId} setToken={this.setToken} />
+          </Route>
           <Route exact path="/register" component={SignUp} />
           {/* <Route path='/Grocery-List'>
             <GroceryList />

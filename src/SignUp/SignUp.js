@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import ApiServices from "../apiServices";
 import TokenServices from "../tokenServices";
 import "./SignUp.css";
+import { useHistory } from "react-router-dom";
 
 function SignUp(props) {
+  const history = useHistory();
   const [error, setError] = useState("");
   // Make react controlled form
 
@@ -22,7 +24,9 @@ function SignUp(props) {
         password.value = "";
         TokenServices.saveAuthToken(res.token);
         console.log(res.token);
-        props.history.push("/");
+        props.setId(TokenServices.decodeToken(res.token).id);
+        props.setToken(res.token);
+        history.push("/");
       })
 
       .catch((res) => {
