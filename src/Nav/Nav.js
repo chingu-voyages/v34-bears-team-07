@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Nav.css";
+import TokenServices from "../tokenServices";
 
 function Nav() {
+  const handleSignOut = () => {
+    TokenServices.clearAuthToken();
+  };
   return (
     <div className="Nav">
       <nav>
@@ -18,9 +22,18 @@ function Nav() {
           <li>
             <Link to="Contact">Contact</Link>
           </li> */}
-          <li>
-            <Link to="login">Login</Link>
-          </li>
+          {!TokenServices.hasAuthToken() && (
+            <li>
+              <Link to="login">Login</Link>
+            </li>
+          )}
+          {TokenServices.hasAuthToken() && (
+            <li>
+              <Link to="/" onClick={handleSignOut}>
+                Sign Out
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
     </div>
