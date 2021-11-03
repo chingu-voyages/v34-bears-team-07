@@ -93,7 +93,9 @@ export default class App extends React.Component {
           <Route exact path="/login">
             <Login setId={this.setId} setToken={this.setToken} />
           </Route>
-          <Route exact path="/register" component={SignUp} />
+          <Route exact path="/register">
+            <SignUp setId={this.setId} setToken={this.setToken} />
+          </Route>
           {/* <Route path='/Grocery-List'>
             <GroceryList />
           </Route>    */}
