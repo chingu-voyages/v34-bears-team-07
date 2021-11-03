@@ -8,6 +8,7 @@ import Dashboard from "./Dashboard/Dashboard";
 // import Footer from "./Footer/Footer";
 import TokenServices from "./tokenServices";
 import ApiServices from "./apiServices";
+import SignUp from "./SignUp/SignUp";
 
 export default class App extends React.Component {
   state = {
@@ -77,6 +78,7 @@ export default class App extends React.Component {
             />
           </Route>
           <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={SignUp} />
           {/* <Route path='/Grocery-List'>
             <GroceryList />
           </Route>    */}
