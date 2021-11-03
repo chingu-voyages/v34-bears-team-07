@@ -17,8 +17,10 @@ export default class App extends React.Component {
 
   componentDidMount() {
     ApiServices.getUser(
-      "6169b723c8b69562f7017d33",
-      "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNzM0NTJiNjJmOTUxNmVlZWM4YzE1MyIsImlhdCI6MTYzNTU0ODExNn0.qsy9ToMr0vJUeYF7OnKIp_qiGNBo-o0dhsV82EV1YiA"
+      // email: testwy1@test.com
+      // password: 123
+      "616c8fc418acccb07603d9eb",
+      "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNmM4ZmM0MThhY2NjYjA3NjAzZDllYiIsImlhdCI6MTYzNTk1OTQzMH0.PZOkVavceKYz9flmyO6YBB9DJJGNo0o4Z6XgvLp6PaU"
     ).then((data) => {
       this.setState({ items: data.user.pantry });
     });
