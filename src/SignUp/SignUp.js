@@ -3,7 +3,7 @@ import ApiServices from "../apiServices";
 import TokenServices from "../tokenServices";
 import "./SignUp.css";
 
-function SignUp() {
+function SignUp(props) {
   const [error, setError] = useState("");
   // Make react controlled form
 
@@ -22,6 +22,7 @@ function SignUp() {
         password.value = "";
         TokenServices.saveAuthToken(res.token);
         console.log(res.token);
+        props.history.push("/");
       })
 
       .catch((res) => {
