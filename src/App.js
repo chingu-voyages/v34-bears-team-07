@@ -7,7 +7,6 @@ import Login from "./Login/Login";
 import SignUp from "./SignUp/SignUp";
 import Dashboard from "./Dashboard/Dashboard";
 // import Footer from "./Footer/Footer";
-import SignUp from "./SignUp/SignUp";
 import ApiServices from "./apiServices";
 
 export default class App extends React.Component {
