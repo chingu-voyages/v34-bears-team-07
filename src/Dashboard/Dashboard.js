@@ -1,6 +1,7 @@
 import React from "react";
 import "./Dashboard.css";
 import Item from "../Item/Item";
+import AddItemFeature from "../AddItemFeature/AddItemFeature";
 
 function Dashboard(props) {
   return (
@@ -36,11 +37,9 @@ function Dashboard(props) {
         <section className="add-icon item-single add-items container-bg">
           <h2 className="center">Add Items</h2>
           <br/>
-          <div className="center">
-            <button type="button">
-              <i className="fa fa-plus center"></i>
-            </button>
-          </div>          
+          <div>
+            <AddItemFeature />
+          </div>                    
         </section>
       </div>      
     </section>

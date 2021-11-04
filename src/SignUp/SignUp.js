@@ -1,33 +1,39 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import ApiServices from "../apiServices";
 import TokenServices from "../tokenServices";
 import "./SignUp.css";
+import { useHistory } from "react-router-dom";
 
-function SignUp() {
-//   const [error, setError] = useState("");
-//   // Make react controlled form
+function SignUp(props) {
+  const history = useHistory();
+  const [error, setError] = useState("");
+  // Make react controlled form
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     setError("");
-//     const { email, password } = e.target;
-//     ApiServices.postLogin({
-//       email: email.value,
-//       password: password.value,
-//     })
-//       .then((res) => {
-//         email.value = "";
-//         password.value = "";
-//         TokenServices.saveAuthToken(res.token);
-//         console.log(res.token);
-//       })
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setError("");
+    const { username, email, password } = e.target;
+    ApiServices.postUser({
+      username: username.value,
+      email: email.value,
+      password: password.value,
+    })
+      .then((res) => {
+        username.value = "";
+        email.value = "";
+        password.value = "";
+        TokenServices.saveAuthToken(res.token);
+        console.log(res.token);
+        props.setId(TokenServices.decodeToken(res.token).id);
+        props.setToken(res.token);
+        history.push("/");
+      })
 
-//       .catch((res) => {
-//         setError(res);
-//         console.log(error);
-//       });
-//   };
+      .catch((res) => {
+        setError(res);
+        console.log(error);
+      });
+  };
   return (
     <React.Fragment>
       <section className="main">

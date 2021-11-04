@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import ApiServices from "../apiServices";
 import TokenServices from "../tokenServices";
 import "./Login.css";
 
-function Login() {
+function Login(props) {
+  const history = useHistory();
   const [error, setError] = useState("");
   // Make react controlled form
 
@@ -21,6 +22,9 @@ function Login() {
         password.value = "";
         TokenServices.saveAuthToken(res.token);
         console.log(res.token);
+        props.setId(TokenServices.decodeToken(res.token).id);
+        props.setToken(res.token);
+        history.push("/");
       })
 
       .catch((res) => {
@@ -28,16 +32,15 @@ function Login() {
         console.log(error);
       });
   };
-  return (    
-
+  return (
     <React.Fragment>
       <section className="main">
         <div>
           <header role="banner">
             <h1>Login</h1>
           </header>
-        </div>      
-        <div className="login center">          
+        </div>
+        <div className="login center">
           <form onSubmit={handleSubmit}>
             <div className="login-container">
               {/* <label htmlFor="email">Email</label> */}
@@ -66,7 +69,7 @@ function Login() {
               <Link to="/register">
                 <button className="register">Create New Account</button>
               </Link>
-            </div>              
+            </div>
           </form>
         </div>
       </section>
