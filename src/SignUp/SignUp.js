@@ -3,6 +3,7 @@ import ApiServices from "../apiServices";
 import TokenServices from "../tokenServices";
 import "./SignUp.css";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 function SignUp(props) {
   const history = useHistory();
