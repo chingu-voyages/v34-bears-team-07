@@ -6,7 +6,7 @@ import Item from "../Item/Item";
 function Dashboard(props) {
     let history = useHistory();
     function handleClick() {
-        history.push("/itemSearch");
+        history.push("/additem");
     }
 
     return (

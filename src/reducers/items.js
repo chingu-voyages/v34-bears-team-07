@@ -13,7 +13,9 @@ export default function rootReducer(state = INITIAL_STATE, action) {
             if (listCopy[itemId]) {
                 listCopy[itemId].qty += qty;
             } else {
-                listCopy[itemId] = action.item;
+                let newItem = { ...action.item };
+                delete newItem.itemId;
+                listCopy[itemId] = newItem;
             }
             return {
                 ...state,

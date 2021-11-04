@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-function Buttons({ addItem }) {
-    const [qty, setQty] = useState(1);
+function Buttons({ addItem, defaultQty = 1 }) {
+    const [qty, setQty] = useState(defaultQty);
     function handleAdd() {
         addItem(qty);
     }

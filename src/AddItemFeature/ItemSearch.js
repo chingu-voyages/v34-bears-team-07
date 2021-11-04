@@ -25,13 +25,15 @@ const ItemSearch = () => {
     }
 
     return (
-        <>
+        <div>
             <form>
+                <label htmlFor="searchBar">Look For An Item:</label>
                 <input
+                    id="searchBar"
                     type="text"
                     placeholder="search keyword"
                     name="keyword"
-                    autocomplete="off"
+                    autoComplete="off"
                     onChange={handleChange}
                     value={text}
                     ref={inputEl}
@@ -40,13 +42,13 @@ const ItemSearch = () => {
             {items && items.length ? (
                 <ul>
                     {items.map((item) => (
-                        <li>
-                            <ItemCard key={item.id} item={item} />
+                        <li key={item.id}>
+                            <ItemCard item={item} />
                         </li>
                     ))}
                 </ul>
             ) : null}
-        </>
+        </div>
     );
 };
 

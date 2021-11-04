@@ -4,22 +4,32 @@ import Nav from "./Nav/Nav";
 // import LandingPage from './LandingPage/LandingPage';
 // import GroceryList from './GroceryList/GroceryList';
 import Login from "./Login/Login";
-import ItemSearch from "./Item/ItemSearch";
+// import ItemSearch from "./Item/ItemSearch";
+import AddItemFeature from "./AddItemFeature/AddItemFeature";
 import Dashboard from "./Dashboard/Dashboard";
 // import Footer from "./Footer/Footer";
-import TokenServices from "./tokenServices";
+import SignUp from "./SignUp/SignUp";
 import ApiServices from "./apiServices";
 
 export default class App extends React.Component {
     state = {
         items: [],
         searchTerm: "",
+        id: "",
+        token: "",
+        msg: "",
     };
 
-    componentDidMount() {
+    // componentDidMount() {
+    //   console.log("test");
+    // }
+
+    componentDidUpdate() {
         ApiServices.getUser(
-            "616c8fc418acccb07603d9eb",
-            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNmM4ZmM0MThhY2NjYjA3NjAzZDllYiIsImlhdCI6MTYzNTYwNDg1N30.e9yFVloPVSj4yvJ6RZkRYvrmAXOcDvRlQ0vR1He_EM8"
+            // email: testwy1@test.com
+            // password: 123
+            this.state.id,
+            `bearer ${this.state.token}`
         ).then((data) => {
             this.setState({ items: data.user.pantry });
         });
@@ -44,6 +54,14 @@ export default class App extends React.Component {
 
     setSearchTerm = (term) => {
         this.setState({ searchTerm: term });
+    };
+
+    setId = (id) => {
+        this.setState({ id: id });
+    };
+
+    setToken = (newToken) => {
+        this.setState({ token: newToken });
     };
 
     render() {
@@ -75,8 +93,15 @@ export default class App extends React.Component {
                             items={this.search()}
                         />
                     </Route>
-                    <Route exact path="/login" component={Login} />
-                    <Route exact path="/itemSearch" component={ItemSearch} />
+                    <Route exact path="/login">
+                        <Login setId={this.setId} setToken={this.setToken} />
+                    </Route>
+                    <Route exact path="/register">
+                        <SignUp setId={this.setId} setToken={this.setToken} />
+                    </Route>
+                    <Route exact path="/addItem">
+                        <AddItemFeature {...this.state} />
+                    </Route>
                     {/* <Route path='/Grocery-List'>
             <GroceryList />
           </Route>    */}

@@ -46,6 +46,19 @@ const ApiServices = {
             !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
         );
     },
+
+    postAddItem(userID, authToken, items) {
+        return fetch(`${process.env.REACT_APP_API_ENDPOINT}/users/${userID}`, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+                Authorization: authToken,
+            },
+            body: JSON.stringify(items),
+        }).then((res) =>
+            !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+        );
+    },
 };
 
 export default ApiServices;
