@@ -44,12 +44,16 @@ function SignUp(props) {
           </header>
         </div>
         <div className="login center">
-          <form 
-        //   onSubmit={handleSubmit}
-          >
+          <form onSubmit={handleSubmit}>
             <div>
               <div className="login-container">
                 {/* <label htmlFor="email">Email</label> */}
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  placeholder="Username"
+                />
                 <input
                   type="text"
                   id="email"
