@@ -41,11 +41,13 @@ const ItemSearch = () => {
             </form>
             {items && items.length ? (
                 <ul>
-                    {items.map((item) => (
-                        <li key={item.id}>
-                            <ItemCard item={item} />
-                        </li>
-                    ))}
+                    {items.map((item) => {
+                        return (
+                            <li key={item._id}>
+                                <ItemCard item={item} />
+                            </li>
+                        );
+                    })}
                 </ul>
             ) : null}
         </div>

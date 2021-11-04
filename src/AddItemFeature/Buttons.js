@@ -4,6 +4,7 @@ function Buttons({ addItem, defaultQty = 1 }) {
     const [qty, setQty] = useState(defaultQty);
     function handleAdd() {
         addItem(qty);
+        setQty(defaultQty);
     }
     return (
         <div>
