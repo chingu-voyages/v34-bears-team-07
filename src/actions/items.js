@@ -1,4 +1,10 @@
-import { ADD_ITEM, CHANGE_QTY, CLEAR_LIST, UPDATE_ITEM } from "./types";
+import {
+    ADD_ITEM,
+    CHANGE_QTY,
+    CLEAR_LIST,
+    UPDATE_ITEM,
+    REMOVE_ITEM,
+} from "./types";
 
 export function addToList(item) {
     return {
@@ -26,5 +32,12 @@ export function updateItem(itemId, item) {
         type: UPDATE_ITEM,
         itemId,
         item,
+    };
+}
+
+export function removeItem(itemId) {
+    return {
+        type: REMOVE_ITEM,
+        itemId,
     };
 }

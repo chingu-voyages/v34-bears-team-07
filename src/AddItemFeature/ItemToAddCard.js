@@ -1,8 +1,14 @@
 import { useState } from "react";
 import EditItemForm from "./EditItemForm";
+import { useDispatch } from "react-redux";
+import { removeItem } from "../actions/items";
 
 function ItemToAddCard({ item }) {
+    const dispatch = useDispatch();
     const [isEditing, setIsEditing] = useState(false);
+    const handleRemove = () => {
+        dispatch(removeItem(item.itemId));
+    };
     return isEditing ? (
         <EditItemForm item={item} setIsEditing={setIsEditing} />
     ) : (
@@ -14,6 +20,7 @@ function ItemToAddCard({ item }) {
                 Purchase Date:{item.purchaseDate.toLocaleDateString()}
             </small>
             <button onClick={() => setIsEditing(true)}>Edit</button>
+            <button onClick={handleRemove}>Remove</button>
         </div>
     );
 }

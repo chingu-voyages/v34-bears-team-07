@@ -3,6 +3,7 @@ import {
     CHANGE_QTY,
     CLEAR_LIST,
     UPDATE_ITEM,
+    REMOVE_ITEM,
 } from "../actions/types";
 
 const INITIAL_STATE = {
@@ -41,6 +42,13 @@ export default function rootReducer(state = INITIAL_STATE, action) {
             listCopy = { ...state.items };
             if (!listCopy[action.itemId]) return state;
             listCopy[action.itemId] = action.item;
+            return {
+                ...state,
+                items: listCopy,
+            };
+        case REMOVE_ITEM:
+            listCopy = { ...state.items };
+            delete listCopy[action.itemId];
             return {
                 ...state,
                 items: listCopy,

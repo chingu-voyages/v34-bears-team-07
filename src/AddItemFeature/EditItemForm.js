@@ -6,12 +6,15 @@ function EditItemForm({ item, setIsEditing }) {
     const dispatch = useDispatch();
     const [formData, setFormData] = useState({
         qty: item.qty,
-        purchaseDate: item.purchaseDate.toISOString().split("T")[0],
+        purchaseDate: item.purchaseDate.toISOString().slice(0, 16),
     });
+    console.log("formData", formData);
     const handleSubmit = (e) => {
         e.preventDefault();
         let updateData = { ...item, ...formData };
+        console.log("updateData1", updateData);
         updateData.purchaseDate = new Date(formData.purchaseDate);
+        console.log("updateData2", updateData);
         dispatch(updateItem(item.itemId, updateData));
         setIsEditing(false);
     };
@@ -30,12 +33,13 @@ function EditItemForm({ item, setIsEditing }) {
                     id="qty"
                     type="number"
                     name="qty"
+                    min="1"
                     value={formData.qty}
                     onChange={handleChange}
                 />
                 <label htmlFor="PurchaseDate">Puchase Date:</label>
                 <input
-                    type="date"
+                    type="datetime-local"
                     name="purchaseDate"
                     value={formData.purchaseDate}
                     onChange={handleChange}
