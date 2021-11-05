@@ -15,6 +15,7 @@ function ItemCard({ key, item }) {
             purchaseDate: new Date(),
             expireDate,
             qty,
+            expirationDays: item.expirationDays,
         };
         dispatch(addToList(newItem));
     }

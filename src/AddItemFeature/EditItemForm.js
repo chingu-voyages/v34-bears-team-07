@@ -6,15 +6,19 @@ function EditItemForm({ item, setIsEditing }) {
     const dispatch = useDispatch();
     const [formData, setFormData] = useState({
         qty: item.qty,
-        purchaseDate: item.purchaseDate.toISOString().slice(0, 16),
+        purchaseDate: convertToDatePickerStr(
+            item.purchaseDate.toLocaleDateString()
+        ),
     });
-    console.log("formData", formData);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         let updateData = { ...item, ...formData };
-        console.log("updateData1", updateData);
-        updateData.purchaseDate = new Date(formData.purchaseDate);
-        console.log("updateData2", updateData);
+        let purchaseDate = convertFromDateStr(updateData.purchaseDate);
+        updateData.purchaseDate = purchaseDate;
+        updateData.expireDate.setDate(
+            purchaseDate.getDate() + item.expirationDays
+        );
         dispatch(updateItem(item.itemId, updateData));
         setIsEditing(false);
     };
@@ -22,6 +26,16 @@ function EditItemForm({ item, setIsEditing }) {
         const { name, value } = e.target;
         setFormData((data) => ({ ...data, [name]: value }));
     };
+    function convertToDatePickerStr(dateStr) {
+        let [mm, dd, yyyy] = dateStr.split("/");
+        return `${yyyy}-${mm.length === 1 ? 0 + mm : mm}-${
+            dd.length === 1 ? 0 + dd : dd
+        }`;
+    }
+    function convertFromDateStr(dateStr) {
+        let [year, month, day] = dateStr.split("-");
+        return new Date(year, Number(month) - 1, day);
+    }
 
     return (
         <div>
@@ -39,7 +53,7 @@ function EditItemForm({ item, setIsEditing }) {
                 />
                 <label htmlFor="PurchaseDate">Puchase Date:</label>
                 <input
-                    type="datetime-local"
+                    type="date"
                     name="purchaseDate"
                     value={formData.purchaseDate}
                     onChange={handleChange}
