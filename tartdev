@@ -1,0 +1,125 @@
+[33mcommit c470b3bf48c59b49da6beea038f0f4501f07916b[m[33m ([m[1;36mHEAD -> [m[1;32mdevelopment[m[33m)[m
+Author: Ryan <leeyuenhigh@gmail.com>
+Date:   Fri Oct 29 21:01:00 2021 -0400
+
+    Added react.fragment
+
+[33mcommit f89d43a66d881e852de28e7cb59d8c9cd2d32de9[m
+Author: Ryan <leeyuenhigh@gmail.com>
+Date:   Fri Oct 29 20:46:50 2021 -0400
+
+    Renabled the search feature
+
+[33mcommit b57fbeb447fbca40e03222ec95b4d349355a3e08[m
+Author: Ryan <leeyuenhigh@gmail.com>
+Date:   Fri Oct 29 20:39:39 2021 -0400
+
+    Fixed spelling for itemName
+
+[33mcommit 59f4eff43b612e1a26a64d578bb98f5fff752784[m
+Author: Ryan <leeyuenhigh@gmail.com>
+Date:   Fri Oct 29 20:02:35 2021 -0400
+
+    Refactored getUser from App to apiServices
+
+[33mcommit a40ffdfaabce43aea85a8a4ee8536751d98a18b8[m
+Author: Ryan <leeyuenhigh@gmail.com>
+Date:   Fri Oct 29 19:57:32 2021 -0400
+
+    Fixed item commonet so that it can render data from backend
+
+[33mcommit 8887bf7e35353b2f00fd3d4d0ecc0f96ad6bd8a7[m
+Author: Ryan <leeyuenhigh@gmail.com>
+Date:   Fri Oct 29 19:48:12 2021 -0400
+
+    App now gets data from the backend given a specific user id and auth token
+
+[33mcommit 1ebdcd49d2c0bd61eb96b7ab10670d4140585599[m
+Author: Ryan <leeyuenhigh@gmail.com>
+Date:   Fri Oct 29 19:47:02 2021 -0400
+
+    Fixed small issues so that ther are no morewarnings
+
+[33mcommit d2a8bc7cb027eeb12f5fc7115b03a45db8e26bf9[m
+Author: Ryan <leeyuenhigh@gmail.com>
+Date:   Wed Oct 27 19:35:56 2021 -0400
+
+    Commented out items that aren't focused right now
+
+[33mcommit 85cf1dea4289d84146aaeb423a7fe99d965d5cb6[m
+Author: Ryan <leeyuenhigh@gmail.com>
+Date:   Fri Oct 22 20:13:22 2021 -0400
+
+    Created basic login component
+
+[33mcommit 1aa6d98be3c555755cf40883c06d3657cd169395[m
+Author: Ryan <leeyuenhigh@gmail.com>
+Date:   Fri Oct 22 19:43:16 2021 -0400
+
+    Moved files from root to src folder
+
+[33mcommit bd8eaee627424983bc4e791ff0b7e5675f998ab1[m
+Author: Ryan <leeyuenhigh@gmail.com>
+Date:   Fri Oct 22 19:38:17 2021 -0400
+
+    Added routing to login page
+
+[33mcommit dd5f5800d304e68feb4dc82756a677ea4d595990[m
+Author: Ryan <leeyuenhigh@gmail.com>
+Date:   Fri Oct 22 19:30:10 2021 -0400
+
+    Fixed endpoints in api services
+
+[33mcommit 678867bbb3dd9aed1467e2187a245202e00411ee[m
+Author: Ryan <leeyuenhigh@gmail.com>
+Date:   Fri Oct 22 19:29:33 2021 -0400
+
+    Added tokenServies
+
+[33mcommit f0d7569ce47e102c4280b08e129e3efc9551a63c[m
+Author: Ryan <leeyuenhigh@gmail.com>
+Date:   Fri Oct 22 19:27:22 2021 -0400
+
+    Added apiServices
+
+[33mcommit 8c9fcf744971d97a6e2b132eff0ef25704dd3c5a[m
+Author: Ryan <leeyuenhigh@gmail.com>
+Date:   Fri Oct 22 19:20:17 2021 -0400
+
+    Added SignUp files
+
+[33mcommit 1e342ccc688be782bf03688c742413fb9338a239[m
+Author: architectsanchez13@gmail.com <you@example.com>
+Date:   Wed Oct 20 01:31:31 2021 -0500
+
+    began working on css. fixed 2 components
+
+[33mcommit 2ac107b3327e5d7220b43b48b399c8872d3bc8dd[m
+Author: architectsanchez13@gmail.com <you@example.com>
+Date:   Tue Oct 19 20:49:19 2021 -0500
+
+    adjusted routes
+
+[33mcommit 7125ef04072f0f8554e2d690ee3ba3773f5064f4[m
+Author: architectsanchez13@gmail.com <you@example.com>
+Date:   Tue Oct 19 20:30:27 2021 -0500
+
+    removed pulled folder
+
+[33mcommit 3ad7172d0739adc36e125bdf301ff7cf14bae17a[m
+Author: architectsanchez13@gmail.com <you@example.com>
+Date:   Tue Oct 19 20:20:06 2021 -0500
+
+    modified env
+
+[33mcommit d5d0fdc95294897d022743dc29d9a9735d92f588[m
+Author: architectsanchez13@gmail.com <you@example.com>
+Date:   Tue Oct 19 19:44:56 2021 -0500
+
+    Env and React Layout
+
+[33mcommit 4ed1c9fe373ff5beed4646cbde28157293458293[m
+Author: architectsanchez13@gmail.com <you@example.com>
+Date:   Thu Oct 14 11:58:35 2021 -0500
+
+    Init
