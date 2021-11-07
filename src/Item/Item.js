@@ -1,37 +1,40 @@
 import React from "react";
+import { Container, Row, Col } from 'react-bootstrap'
+
+
 
 function Item(props) {
   return (
-    <section className="form-section">
-      <div className="group">
-        <div className="item-single">
+    <Container className="form-section">
+      <Row className="group">
+        <Col className="item-single">
           <h2>{props.item.itemName}</h2>
-        </div>
-        <div className="item-single">
+        </Col>
+        <Col className="item-single">
           <h3>
-            DOP
-            <p className="center"> {props.item.purchaseDate}</p>
+            Dop:
+            <span className="center"> {props.item.purchaseDate}</span>
           </h3>
-        </div>
-        <div className="item-single">
+        </Col>
+        <Col className="item-single">
           <h3>
-            EXP
-            <p className="center">{props.item.expireDate}</p>
+            Exp: 
+            <span className="center">{props.item.expireDate}</span>
           </h3>
-        </div>
-        <div className="item-single">
+        </Col>
+        <Col className="item-single">
           <h3>
             QTY
-            <p className="center">{props.item.qty}</p>
+            <span className="center">{props.item.qty}</span>
           </h3>
-        </div>
-        <div className="remove item-single ">
-          <button type="button">
+        </Col>
+        <Col className="remove item-single ">
+        <button>
             <i className="fa fa-minus"></i>
           </button>
-        </div>
-      </div>
-    </section>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

@@ -1,11 +1,12 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
+import { Container } from 'react-bootstrap'
 import Nav from "./Nav/Nav";
 // import LandingPage from './LandingPage/LandingPage';
 // import GroceryList from './GroceryList/GroceryList';
 import Login from "./Login/Login";
 import Dashboard from "./Dashboard/Dashboard";
-// import Footer from "./Footer/Footer";
+import Footer from "./Footer/Footer";
 import SignUp from "./SignUp/SignUp";
 import ApiServices from "./apiServices";
 
@@ -107,7 +108,7 @@ export default class App extends React.Component {
             () => <CreateRecipe addItem={this.addItem}/>
           }/> */}
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     );
   }

@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "lockfileVersion": 2,
   "requires": true,
-<<<<<<< HEAD
   "packages": {
     "": {
       "name": "fridge-raiders-client",
@@ -21813,8 +21812,6 @@
       }
     }
   },
-=======
->>>>>>> f6f0f8e575c6d4aa64bb0b56021b664caa420421
   "dependencies": {
     "@babel/code-frame": {
       "version": "7.15.8",
