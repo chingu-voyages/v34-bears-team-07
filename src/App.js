@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
 import Nav from "./Nav/Nav";
-// import LandingPage from './LandingPage/LandingPage';
+import LandingPage from './LandingPage/LandingPage';
 // import GroceryList from './GroceryList/GroceryList';
 import Login from "./Login/Login";
 import SignUp from "./SignUp/SignUp";
@@ -81,10 +81,10 @@ export default class App extends React.Component {
               </div>
             </div>
           </header>
-          {/* <Route path='/'>
+          <Route exact path='/'>
             <LandingPage />
-          </Route>           */}
-          <Route exact path="/">
+          </Route>          
+          <Route exact path="/dashboard">
             <Dashboard
               setSearchTerm={this.setSearchTerm}
               items={this.search()}
