@@ -294,7 +294,7 @@ input[type="range"] {
 .banner {
   flex-wrap: wrap;
   width:100%;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   padding: 0.5em;
   margin-bottom: 0;
@@ -302,7 +302,6 @@ input[type="range"] {
   align-items: center;
   flex-direction: column;
 }
-
 
 .banner h1, h4 {
   margin: 0;
