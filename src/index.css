@@ -110,7 +110,7 @@ a:hover {
 
 .logo{
   font-size: xxx-large;  
-  padding: 0px;
+  padding-left: 10px;
 }
 
 span {
@@ -292,10 +292,10 @@ input[type="range"] {
 }
 
 .banner {
+  display: flex;
   flex-wrap: wrap;
   width:100%;
   background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
   padding: 0.5em;
   margin-bottom: 0;
   position: absolute;
@@ -305,6 +305,14 @@ input[type="range"] {
 
 .banner h1, h4 {
   margin: 0;
+}
+
+.banner a {
+  color: #a1c794;
+}
+
+.banner a:hover {
+  color: white;
 }
 
 .instructions {
@@ -365,5 +373,12 @@ input[type="range"] {
 
   .group {
     flex-direction: row;
+  }
+}
+
+/* hide banner when screen is smaller than iPad */
+@media screen and (max-width: 767px) {
+  .banner {
+    display: none;
   }
 }
