@@ -59,6 +59,20 @@ const ApiServices = {
             !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
         );
     },
+
+    deleteItem(userID, authToken, itemID) {
+        return fetch(
+            `${process.env.REACT_APP_API_ENDPOINT}/users/${userID}/${itemID}`,
+            {
+                method: "DELETE",
+                headers: {
+                    Authorization: authToken,
+                },
+            }
+        ).then((res) =>
+            !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+        );
+    },
 };
 
 export default ApiServices;
