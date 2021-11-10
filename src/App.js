@@ -12,109 +12,122 @@ import SignUp from "./SignUp/SignUp";
 import ApiServices from "./apiServices";
 
 export default class App extends React.Component {
-    state = {
-        items: [],
-        searchTerm: "",
-        id: "",
-        token: "",
-        msg: "",
-    };
+  state = {
+    items: [],
+    searchTerm: "",
+    id: "",
+    token: "",
+    msg: "",
+  };
 
-    // componentDidMount() {
-    //   console.log("test");
-    // }
+  // componentDidMount() {
+  //   console.log("test");
+  // }
 
-    componentDidUpdate() {
-        ApiServices.getUser(
-            // email: testwy1@test.com
-            // password: 123
-            this.state.id,
-            `bearer ${this.state.token}`
-        ).then((data) => {
-            this.setState({ items: data.user.pantry });
-        });
+  componentDidUpdate() {
+    console.log(this.state.items, this.state.id, this.state.token);
+    if (this.state.id === "" && this.state.token === "") {
+      return;
     }
+    ApiServices.getUser(
+      // email: testwy1@test.com
+      // password: 123
+      this.state.id,
+      `bearer ${this.state.token}`
+    ).then((data) => {
+      this.setState({ items: data.user.pantry });
+    });
+  }
 
-    addItem = (item) => {
-        console.log(item);
-        const newItems = this.state.items;
-        newItems.push(item);
-        console.log(newItems);
-        this.setState({
-            items: newItems,
-        });
-        // add endpoint
-    };
+  addItem = (item) => {
+    console.log(item);
+    const newItems = this.state.items;
+    newItems.push(item);
+    console.log(newItems);
+    this.setState({
+      items: newItems,
+    });
+    // add endpoint
+  };
 
-    search = () => {
-        return this.state.items.filter((item) =>
-            item.itemName.toLowerCase().includes(this.state.searchTerm)
-        );
-    };
+  search = () => {
+    return this.state.items.filter((item) =>
+      item.itemName.toLowerCase().includes(this.state.searchTerm)
+    );
+  };
 
-    setSearchTerm = (term) => {
-        this.setState({ searchTerm: term });
-    };
+  setSearchTerm = (term) => {
+    this.setState({ searchTerm: term });
+  };
 
-    setId = (id) => {
-        this.setState({ id: id });
-    };
+  setId = (id) => {
+    this.setState({ id: id });
+  };
 
-    setToken = (newToken) => {
-        this.setState({ token: newToken });
-    };
+  setToken = (newToken) => {
+    this.setState({ token: newToken });
+  };
 
-    render() {
-        return (
-            <div>
-                <main>
-                    <header>
-                        <div className="group">
-                            <div className="item">
-                                <Link to="/">
-                                    <span className="logo">Fridge Raiders</span>
-                                    <br></br>
-                                    <span>
-                                        <i></i>
-                                    </span>
-                                </Link>
-                            </div>
-                            <div className="item-double">
-                                <Nav />
-                            </div>
-                        </div>
-                    </header>
-                    {/* <Route path='/'>
+  setItems = (newItems) => {
+    this.setState({ items: newItems });
+  };
+
+  render() {
+    return (
+      <div>
+        <main>
+          <header>
+            <div className="group">
+              <div className="item">
+                <Link to="/">
+                  <span className="logo">Fridge Raiders</span>
+                  <br></br>
+                  <span>
+                    <i></i>
+                  </span>
+                </Link>
+              </div>
+              <div className="item-double">
+                <Nav
+                  setItems={this.setItems}
+                  setId={this.setId}
+                  setToken={this.setToken}
+                  setSearchTerm={this.setSearchTerm}
+                />
+              </div>
+            </div>
+          </header>
+          {/* <Route path='/'>
             <LandingPage />
           </Route>           */}
-                    <Route exact path="/">
-                        <Dashboard
-                            setSearchTerm={this.setSearchTerm}
-                            items={this.search()}
-                        />
-                    </Route>
-                    <Route exact path="/login">
-                        <Login setId={this.setId} setToken={this.setToken} />
-                    </Route>
-                    <Route exact path="/register">
-                        <SignUp setId={this.setId} setToken={this.setToken} />
-                    </Route>
-                    <Route exact path="/addItem">
-                        <AddItemFeature {...this.state} />
-                    </Route>
-                    {/* <Route path='/Grocery-List'>
+          <Route exact path="/">
+            <Dashboard
+              setSearchTerm={this.setSearchTerm}
+              items={this.search()}
+            />
+          </Route>
+          <Route exact path="/login">
+            <Login setId={this.setId} setToken={this.setToken} />
+          </Route>
+          <Route exact path="/register">
+            <SignUp setId={this.setId} setToken={this.setToken} />
+          </Route>
+          <Route exact path="/addItem">
+            <AddItemFeature {...this.state} />
+          </Route>
+          {/* <Route path='/Grocery-List'>
             <GroceryList />
           </Route>    */}
-                    {/* <Route path='/Login'>
+          {/* <Route path='/Login'>
             <Login />
             </Route> */}
 
-                    {/* <Route path='/create' render={
+          {/* <Route path='/create' render={
             () => <CreateRecipe addItem={this.addItem}/>
           }/> */}
-                </main>
-                {/* <Footer /> */}
-            </div>
-        );
-    }
+        </main>
+        {/* <Footer /> */}
+      </div>
+    );
+  }
 }
