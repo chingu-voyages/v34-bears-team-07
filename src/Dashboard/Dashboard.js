@@ -43,13 +43,13 @@ function Dashboard(props) {
 
         <section className="add-icon item-single add-items">
           <h2 className="center">Add Items</h2>
-          <br/>
+          <br />
           <div className="center">
             <button onClick={handleClick} type="button">
               <i className="fa fa-plus center"></i>
             </button>
             {/* <AddItemFeature /> */}
-          </div>                    
+          </div>
         </section>
       </div>
     </section>

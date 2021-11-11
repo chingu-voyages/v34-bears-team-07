@@ -420,6 +420,10 @@ input[type="range"] {
   flex: 2;
   margin: 10px;
 }
+/* 
+#menu {
+  display: none;
+} */
 
 /* Groups & Items  (Desktop) */
 
@@ -446,3 +450,16 @@ input[type="range"] {
     font-size: medium;
   }
 }
+
+/* desktop */
+/* @media screen and (min-width: 1024px) {
+  #menu {
+    display: flex
+  }
+
+  .none {
+    display: none
+  }
+} */
+
+
