@@ -7,7 +7,7 @@ function LandingPage() {
     <div className="LandingPage">
       <div className="flex-container">
         <img
-          src={process.env.PUBLIC_URL + "imgs/breadupclosecrop2.jpg"}
+          src={process.env.PUBLIC_URL + "imgs/breadupclosecrop2small.jpg"}
           alt="assortment of groceries"
         />
         <div class="banner">
@@ -55,7 +55,7 @@ function LandingPage() {
         </div>
         <div className="step">
           <img
-            src={process.env.PUBLIC_URL + "imgs/carts.png"}
+            src={process.env.PUBLIC_URL + "imgs/cartsmall.jpg"}
             alt="assortment of groceries"
             className="small-img"
           />
@@ -66,7 +66,7 @@ function LandingPage() {
         </div>
         <div className="step">
           <img
-            src={process.env.PUBLIC_URL + "imgs/list.png"}
+            src={process.env.PUBLIC_URL + "imgs/listsmall.jpg"}
             alt="assortment of groceries"
             className="small-img"
           />
