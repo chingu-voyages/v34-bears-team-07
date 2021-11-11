@@ -1,10 +1,10 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
-import { Container } from 'react-bootstrap'
 import Nav from "./Nav/Nav";
 // import LandingPage from './LandingPage/LandingPage';
 // import GroceryList from './GroceryList/GroceryList';
 import Login from "./Login/Login";
+import AddItemFeature from "./AddItemFeature/AddItemFeature";
 import Dashboard from "./Dashboard/Dashboard";
 import Footer from "./Footer/Footer";
 import SignUp from "./SignUp/SignUp";
@@ -22,7 +22,10 @@ export default class App extends React.Component {
   //   console.log("test");
   // }
 
-  componentDidUpdate() {
+  componentDidUpdate() {    
+    if (this.state.id === "" && this.state.token === "") {
+      return;
+    }
     ApiServices.getUser(
       // email: testwy1@test.com
       // password: 123
@@ -62,6 +65,10 @@ export default class App extends React.Component {
     this.setState({ token: newToken });
   };
 
+  setItems = (newItems) => {
+    this.setState({ items: newItems });
+  };
+
   render() {
     return (
       <div>
@@ -71,10 +78,6 @@ export default class App extends React.Component {
               <div className="item">
                 <Link to="/">
                   <span className="logo">Fridge Raiders</span>
-                  <br></br>
-                  <span>
-                    <i></i>
-                  </span>
                 </Link>
               </div>
               <div className="item-double">
@@ -97,16 +100,12 @@ export default class App extends React.Component {
           <Route exact path="/register">
             <SignUp setId={this.setId} setToken={this.setToken} />
           </Route>
+          <Route exact path="/addItem">
+            <AddItemFeature {...this.state} />
+          </Route>
           {/* <Route path='/Grocery-List'>
             <GroceryList />
           </Route>    */}
-          {/* <Route path='/Login'>
-            <Login />
-            </Route> */}
-
-          {/* <Route path='/create' render={
-            () => <CreateRecipe addItem={this.addItem}/>
-          }/> */}
         </main>
         <Footer />
       </div>

@@ -60,6 +60,7 @@ function Login(props) {
                 placeholder="Meow"
               />
             </div>
+            <br/>
             <div className="center">
               <button type="submit">Login</button>
             </div>

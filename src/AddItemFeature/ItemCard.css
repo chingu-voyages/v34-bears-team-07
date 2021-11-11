@@ -1,0 +1,22 @@
+.item-card-wrapper {
+    background-color: hsla(85, 100%, 60%, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 600px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px grey;
+}
+
+.item-card-desc {
+    display: inline-block;
+}
+.item-card-name {
+    line-height: 16px;
+}
+
+.item-card-category {
+    color: grey;
+}

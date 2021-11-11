@@ -222,6 +222,23 @@ input[type='range'] {
   align-items: center;
 }
 
+.spaced {
+  display: flex;
+  justify-content: space-around;  
+}
+
+.to-right {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Groups & Items  (Mobile First) */
 
 .group {

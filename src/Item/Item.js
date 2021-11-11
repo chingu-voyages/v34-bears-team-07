@@ -1,40 +1,48 @@
 import React from "react";
-import { Container, Row, Col } from 'react-bootstrap'
-
-
 
 function Item(props) {
+  const purchaseDate = new Date(props.item.purchaseDate).toLocaleDateString(
+    "en-US"
+  );
+  const expireDate = new Date(props.item.expireDate).toLocaleDateString(
+    "en-US"
+  );
+
+  const newItemName = (props.item.itemName).charAt(0).toUpperCase() + 
+  (props.item.itemName).slice(1)
+
   return (
-    <Container className="form-section">
-      <Row className="group">
-        <Col className="item-single">
-          <h2>{props.item.itemName}</h2>
-        </Col>
-        <Col className="item-single">
+    <section className="form-section">
+      <div className="group spaced">
+        <div className="item center">
+          <h2>{`${newItemName}`}</h2>
+        </div>
+        <div className="item">
           <h3>
-            Dop:
-            <span className="center"> {props.item.purchaseDate}</span>
+            DOP
+            <p className="center"> {`${purchaseDate}`}</p>
           </h3>
-        </Col>
-        <Col className="item-single">
+        </div>
+        <div className="item">
           <h3>
-            Exp: 
-            <span className="center">{props.item.expireDate}</span>
+            EXP
+            <p className="center">{expireDate}</p>
           </h3>
-        </Col>
-        <Col className="item-single">
+        </div>
+        <div className="item">
           <h3>
             QTY
-            <span className="center">{props.item.qty}</span>
+            <p className="center">{props.item.qty}</p>
           </h3>
-        </Col>
-        <Col className="remove item-single ">
-        <button>
+        </div>
+        <div className="remove item to-right">
+          <button type="button" className="center-button">
             <i className="fa fa-minus"></i>
           </button>
-        </Col>
-      </Row>
-    </Container>
+        </div>
+      </div>
+      <br></br>
+    </section>
   );
 }
 
