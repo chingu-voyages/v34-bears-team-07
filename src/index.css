@@ -249,6 +249,39 @@ input[type='range'] {
   align-items: center;
 }
 
+label p {
+  margin: 6px 0 23px;
+}
+
+p + p {
+  margin-top: 15px;  
+}
+
+form {
+  text-align: left;
+}
+
+label {
+  display: block;
+}
+
+input[type="range"] {
+  width: 50px;
+}
+
+.form-section {
+  margin-bottom: 15px;
+}
+
+.button-section {
+  padding: 0 0 0 15px;
+}
+
+.overview-section input,
+.overview-section textarea {
+  width: 100%;
+}
+
 /* Login/Sign Up Styling */
 .login-container {
   width: 100%;
@@ -295,45 +328,6 @@ input[type='range'] {
 .login p {
   font-size: 16px;
   margin: 0px;
-  color: white;
-}
-label p {
-  margin: 6px 0 23px;
-}
-
-p + p {
-  margin-top: 15px;  
-}
-
-form {
-  text-align: left;
-}
-
-label {
-  display: block;
-}
-
-input[type="range"] {
-  width: 50px;
-}
-
-.form-section {
-  margin-bottom: 15px;
-}
-
-.button-section {
-  padding: 0 0 0 15px;
-}
-
-.overview-section input,
-.overview-section textarea {
-  width: 100%;
-}
-
-.center {  
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* Landing Page Styling */
