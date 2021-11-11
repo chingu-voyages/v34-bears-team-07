@@ -3,6 +3,7 @@
 }
 
 body {
+  margin:0;
   font-size: 20px;
   text-align: left;
   line-height: 1.5;
@@ -38,6 +39,9 @@ footer {
   font-size: 12px;
 }
 /* ---  Navigation --- */
+.nav-bg {
+background-color: #446413;
+}
 
 header nav {
   display: flex;
@@ -46,6 +50,7 @@ header nav {
 }
 
 header h1 {
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -64,10 +69,6 @@ header nav ul li {
 header nav ul li a {
   text-decoration: none;
   padding: 0 10px 0 10px;
-}
-
-header nav ul li a:hover {
-  color: #446413;
 }
 
 header h1,
@@ -97,15 +98,17 @@ section {
 
 a {
   text-decoration: none;
+  color:white;
 }
 
 a:hover {
-  color: #446413;
+  color: rgb(235, 233, 233);;
 }
 
 .logo {
   font-size: 60px;
   padding: 0px;
+  padding-left: 10px;
 }
 
 span {
@@ -123,6 +126,19 @@ h2 {
   font-size: 20px;
 }
 
+.pantry-header {
+  background-color: #faf9f8;
+  color:black;
+}
+.pantry-header h1{
+  color:black;
+}
+
+.current-items, .add-items {
+  background-color: rgb(228, 228, 228);
+}
+
+.a
 form {
   margin: 0 auto;
   padding: 0 0 40px;
@@ -239,6 +255,168 @@ input[type='range'] {
   align-items: center;
 }
 
+/* Login/Sign Up Styling */
+.login-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 10px;
+  background-color: rgb(235, 233, 233);
+  border: 1px black solid;
+}
+
+.login input {
+  margin-bottom: 20px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.login button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  cursor: pointer;  
+}
+
+.login form {
+  width: 300px;
+
+}
+
+.register {
+  margin: 8px;
+  background-color: rgb(0, 136, 255);
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  cursor: pointer;  
+}
+
+.login p {
+  font-size: 16px;
+  margin: 0px;
+  color: white;
+}
+label p {
+  margin: 6px 0 23px;
+}
+
+p + p {
+  margin-top: 15px;  
+}
+
+form {
+  text-align: left;
+}
+
+label {
+  display: block;
+}
+
+input[type="range"] {
+  width: 50px;
+}
+
+.form-section {
+  margin-bottom: 15px;
+}
+
+.button-section {
+  padding: 0 0 0 15px;
+}
+
+.overview-section input,
+.overview-section textarea {
+  width: 100%;
+}
+
+.center {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Landing Page Styling */
+.LandingPage {
+  font-size: 1.7rem;
+  color: white;
+  text-align: center;
+
+}
+.LandingPage .flex-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.LandingPage img {
+  width: 100%;
+}
+
+.LandingPage .banner {
+  display: flex;
+  flex-wrap: wrap;
+  width:100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.5em;
+  margin-bottom: 0;
+  position: absolute;
+  align-items: center;
+  flex-direction: column;
+}
+
+.banner h1, h4 {
+  color:white;
+  margin: 0;
+}
+
+.banner a {
+  color: #a1c794;
+  color:white;
+}
+
+.banner a:hover {
+  color: white;
+}
+
+.instructions {
+  margin: 0 auto;
+}
+
+.instructions h1{
+  margin: 1rem auto;
+  color:black;
+}
+
+.step {
+  color: #588748;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.step h3 {
+ margin-bottom:0;
+ align-self: center;
+}
+
+.LandingPage .small-img {
+  max-width: 700px;
+  width:100%;
+  padding: 0 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 /* Groups & Items  (Mobile First) */
 
 .group {
@@ -266,5 +444,18 @@ input[type='range'] {
 
   .group {
     flex-direction: row;
+  }
+}
+
+/* hide banner when screen is smaller than iPad */
+/* @media screen and (max-width: 767px) {
+  .LandingPage .banner {
+    display: none;
+  } */
+
+@media screen and (max-width: 500px) {
+  .LandingPage .banner h1,h4 {
+    /* display: none; */
+    font-size: medium;
   }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
 import Nav from "./Nav/Nav";
-// import LandingPage from './LandingPage/LandingPage';
+import LandingPage from './LandingPage/LandingPage';
 // import GroceryList from './GroceryList/GroceryList';
 import Login from "./Login/Login";
 import AddItemFeature from "./AddItemFeature/AddItemFeature";
@@ -73,7 +73,7 @@ export default class App extends React.Component {
     return (
       <div>
         <main>
-          <header>
+          <header className="nav-bg">
             <div className="group">
               <div className="item">
                 <Link to="/">
@@ -85,10 +85,10 @@ export default class App extends React.Component {
               </div>
             </div>
           </header>
-          {/* <Route path='/'>
+          <Route exact path='/'>
             <LandingPage />
-          </Route>           */}
-          <Route exact path="/">
+          </Route>          
+          <Route exact path="/dashboard">
             <Dashboard
               setSearchTerm={this.setSearchTerm}
               items={this.search()}

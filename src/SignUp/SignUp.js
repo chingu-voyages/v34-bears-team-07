@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ApiServices from "../apiServices";
 import TokenServices from "../tokenServices";
 import "./SignUp.css";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function SignUp(props) {
   const history = useHistory();
@@ -26,7 +26,7 @@ function SignUp(props) {
         console.log(res.token);
         props.setId(TokenServices.decodeToken(res.token).id);
         props.setToken(res.token);
-        history.push("/");
+        history.push("/dashboard");
       })
 
       .catch((res) => {
@@ -39,38 +39,46 @@ function SignUp(props) {
       <section className="main">
         <div>
           <header role="banner">
-            <h1>Sign Up</h1>
+            <h1>Register</h1>
           </header>
         </div>
-        <div className="signup center">
+        <div className="login center">
           <form onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="userName">Username</label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                placeholder="John Doe"
-              />
-              <label htmlFor="email">Email</label>
-              <input
-                type="text"
-                id="email"
-                name="email"
-                placeholder="meow@meow.com"
-              />
-              <label htmlFor="password" id="password" name="password">
-                Password
-              </label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Meow"
-              />
+              <div className="login-container">
+                {/* <label htmlFor="email">Email</label> */}
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  placeholder="Username"
+                />
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                />
+                {/* <label htmlFor="password" id="password" name="password">
+                  Password
+                </label> */}
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                />
+                <div className="center">
+                  <button type="submit">Register</button>
+                </div>
+              </div>
             </div>
+            <div className="center"></div>
+            <p className="center">Already have an account?</p>
             <div className="center">
-              <button type="submit">Sign Up</button>
+              <Link to="/login">
+                <button className="register">Login</button>
+              </Link>
             </div>
           </form>
         </div>

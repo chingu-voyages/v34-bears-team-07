@@ -5,7 +5,7 @@ import TokenServices from "../tokenServices";
 import "./Login.css";
 
 function Login(props) {
-  const history = useHistory();
+  // const history = useHistory();
   const [error, setError] = useState("");
   // Make react controlled form
 
@@ -21,10 +21,10 @@ function Login(props) {
         email.value = "";
         password.value = "";
         TokenServices.saveAuthToken(res.token);
-        console.log(res.token);
         props.setId(TokenServices.decodeToken(res.token).id);
         props.setToken(res.token);
-        history.push("/");
+        // history.push("/");
+        window.location = "/dashboard";
       })
 
       .catch((res) => {
@@ -42,34 +42,26 @@ function Login(props) {
         </div>
         <div className="login center">
           <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="email">Email</label>
-              <input
-                type="text"
-                id="email"
-                name="email"
-                placeholder="meow@meow.com"
-              />
-              <label htmlFor="password" id="password" name="password">
+            <div className="login-container">
+              {/* <label htmlFor="email">Email</label> */}
+              <input type="text" id="email" name="email" placeholder="Email" />
+              {/* <label htmlFor="password" id="password" name="password">
                 Password
-              </label>
+              </label> */}
               <input
                 type="password"
                 id="password"
                 name="password"
-                placeholder="Meow"
+                placeholder="Password"
               />
+              <div className="center">
+                <button type="submit">Login</button>
+              </div>
             </div>
-            <br/>
-            <div className="center">
-              <button type="submit">Login</button>
-            </div>
-            <div className="center">
-              <p>OR</p>
-            </div>
+            <div className="center"></div>
             <div className="center">
               <Link to="/register">
-                <button>Create New Account</button>
+                <button className="register">Create New Account</button>
               </Link>
             </div>
           </form>

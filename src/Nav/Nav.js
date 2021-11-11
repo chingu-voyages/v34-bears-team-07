@@ -13,7 +13,7 @@ function Nav() {
         <ul id="menu">
           {/* <li><Link to="/">Fridge Raiders</Link></li> */}
           <li>
-            <Link to="/">My Pantry</Link>
+            <Link to="/dashboard">My Pantry</Link>
           </li>
           {/* change above route to dashboard when landing page is implemented */}
           {/* <li>
