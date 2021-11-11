@@ -1,17 +1,29 @@
+:root {
+--body-bg: #faf9f8;
+--header-footer-text: #757572;
+--nav-bg: #446413;
+--link-hover:  rgb(235, 233, 233);
+--container-bg: rgb(228, 228, 228);
+--search-input-bg: #f1f1f1;
+--login-btn-blue: rgb(0, 136, 255);
+--banner-link: #a1c794;
+--landing-text: #588748;
+--nav-links: white;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
   margin:0;
   font-size: 20px;
   text-align: left;
   line-height: 1.5;
   min-width: 320px;
   /* background-image: url('./img/landing-page.jpeg'); */
-
-  background-color: #faf9f8;
-
+  background-color: var(--body-bg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -19,28 +31,26 @@ body {
 }
 
 /* Layout for header */
-
 header {
   padding-top: 2rem;
   padding-bottom: 1.5rem;
   text-align: center;
-
   font-weight: 400;
   font-size: 20px;
   line-height: 0.75;
-  color: #757572;
 }
 
 footer {
   padding-top: 2rem;
   padding-bottom: 1.5;
-  color: #757572;
+  color: var(--header-footer-text);
   text-align: center;
   font-size: 12px;
 }
+
 /* ---  Navigation --- */
 .nav-bg {
-background-color: #446413;
+background-color: var(--nav-bg);
 }
 
 header nav {
@@ -50,7 +60,8 @@ header nav {
 }
 
 header h1 {
-  color: white;
+  color: var(--header-footer-text);
+  margin:0;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -69,11 +80,6 @@ header nav ul li {
 header nav ul li a {
   text-decoration: none;
   padding: 0 10px 0 10px;
-}
-
-header h1,
-a {
-  color: #757572;
 }
 
 /* sections */
@@ -98,11 +104,11 @@ section {
 
 a {
   text-decoration: none;
-  color:white;
+  color:var(--nav-links);
 }
 
 a:hover {
-  color: rgb(235, 233, 233);;
+  color: var(--link-hover);
 }
 
 .logo {
@@ -116,8 +122,7 @@ span {
   padding: 0;
 }
 
-p,
-h2 {
+p, h2 {
   margin: 23px 0;
 }
 
@@ -126,20 +131,11 @@ h2 {
   font-size: 20px;
 }
 
-.pantry-header {
-  background-color: #faf9f8;
-  color:black;
-}
-.pantry-header h1{
-  color:black;
-}
-
 .current-items, .add-items {
-  background-color: rgb(228, 228, 228);
+  background-color: var(--container-bg);
 }
 
-.a
-form {
+.a form {
   margin: 0 auto;
   padding: 0 0 40px;
   max-width: 650px;
@@ -151,14 +147,14 @@ form.search input[type='text'] {
   border: 0;
   float: left;
   width: 70%;
-  background: #f1f1f1;
+  background: var(--search-input-bg);
 }
 
 form.search button {
   float: left;
   width: 20%;
   padding: 10px;
-  background: #446413;
+  background: var(--nav-bg);
   color: white;
   font-size: 17px;
   border: 0;
@@ -169,11 +165,10 @@ form.search button {
   float: left;
   width: 10%;
   padding: 10px;
-  background: #446413;
+  background: var(--nav-bg);
   border: 0;
   color: white;
   font-size: 17px;
-
   cursor: pointer;
 }
 
@@ -181,10 +176,9 @@ div.remove button {
   float: left;
   width: 12%;
   padding: 4px;
-  background: #446413;
+  background: var(--nav-bg);
   color: white;
   font-size: 17px;
-
   border-left: none;
   cursor: pointer;
 }
@@ -263,11 +257,12 @@ input[type='range'] {
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 10px;
-  background-color: rgb(235, 233, 233);
+  background-color: var(--container-bgcontainer-bg);
   border: 1px black solid;
 }
 
 .login input {
+  background-color: var(--search-input-bg);
   margin-bottom: 20px;
   padding: 5px;
   border-radius: 3px;
@@ -288,7 +283,7 @@ input[type='range'] {
 
 .register {
   margin: 8px;
-  background-color: rgb(0, 136, 255);
+  background-color: var(--login-btn-blue);
   color: white;
   padding: 10px;
   font-size: 16px;
@@ -377,12 +372,11 @@ input[type="range"] {
 }
 
 .banner a {
-  color: #a1c794;
-  color:white;
+  color: var(--banner-link);
 }
 
 .banner a:hover {
-  color: white;
+  color: var(--link-hover);
 }
 
 .instructions {
@@ -395,7 +389,7 @@ input[type="range"] {
 }
 
 .step {
-  color: #588748;
+  color: var(--landing-text);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -414,7 +408,6 @@ input[type="range"] {
   max-width: 700px;
   width:100%;
   padding: 0 1.5rem;
-  padding-bottom: 1.5rem;
 }
 
 /* Groups & Items  (Mobile First) */
