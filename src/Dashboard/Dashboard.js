@@ -47,8 +47,7 @@ function Dashboard(props) {
           <div className="center">
             <button onClick={handleClick} type="button">
               <i className="fa fa-plus center"></i>
-            </button>
-            {/* <AddItemFeature /> */}
+            </button>            
           </div>
         </section>
       </div>

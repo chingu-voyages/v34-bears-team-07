@@ -58,7 +58,6 @@ function Login(props) {
                 <button type="submit">Login</button>
               </div>
             </div>
-            <div className="center"></div>
             <div className="center">
               <Link to="/register">
                 <button className="register">Create New Account</button>

@@ -1,4 +1,6 @@
 import React from "react";
+import TokenServices from "../tokenServices";
+import ApiServices from "../apiServices";
 
 function Item(props) {
   const purchaseDate = new Date(props.item.purchaseDate).toLocaleDateString(
@@ -9,7 +11,13 @@ function Item(props) {
   );
 
   const newItemName = (props.item.itemName).charAt(0).toUpperCase() + 
-  (props.item.itemName).slice(1)
+  (props.item.itemName).slice(1);
+
+  const handleRemove = () => {
+    const userId = TokenServices.decodeToken().id;
+    const token = TokenServices.getAuthToken();
+    ApiServices.deleteItem(userId, token, props.item._id);
+};
 
   return (
     <section className="form-section">
@@ -36,8 +44,11 @@ function Item(props) {
           </h3>
         </div>
         <div className="remove item to-right">
-          <button type="button" className="center-button">
-            <i className="fa fa-minus"></i>
+          <button 
+            type="button" 
+            className="center-button" 
+            onClick={handleRemove}>
+              <i className="fa fa-minus"></i>
           </button>
         </div>
       </div>

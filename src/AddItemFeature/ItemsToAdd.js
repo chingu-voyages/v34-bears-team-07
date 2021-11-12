@@ -1,3 +1,4 @@
+import { useHistory } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import { clearList } from "../actions/items";
 import ItemToAddCard from "./ItemToAddCard";
@@ -5,6 +6,7 @@ import ApiServices from "../apiServices";
 import TokenServices from "../tokenServices";
 
 export default function ItemsToAdd() {
+  const history = useHistory();
   const dispatch = useDispatch();
   const { items } = useSelector((store) => store.items);
   const itemGrid = Object.keys(items).map((id) => (
@@ -20,6 +22,7 @@ export default function ItemsToAdd() {
       Object.values(items)
     );
     dispatch(clearList());
+    history.push("/dashboard");
   };
 
   const handleClearList = () => {

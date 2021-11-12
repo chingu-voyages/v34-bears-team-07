@@ -2,13 +2,14 @@ import React from "react";
 import { Route, Link } from "react-router-dom";
 import Nav from "./Nav/Nav";
 import LandingPage from './LandingPage/LandingPage';
-// import GroceryList from './GroceryList/GroceryList';
+import GroceryList from './GroceryList/GroceryList';
 import Login from "./Login/Login";
 import AddItemFeature from "./AddItemFeature/AddItemFeature";
 import Dashboard from "./Dashboard/Dashboard";
 import Footer from "./Footer/Footer";
 import SignUp from "./SignUp/SignUp";
 import ApiServices from "./apiServices";
+import TokenServices from "./tokenServices";
 
 export default class App extends React.Component {
   state = {
@@ -17,10 +18,23 @@ export default class App extends React.Component {
     id: "",
     token: "",
     msg: "",
-  };
-  // componentDidMount() {
-  //   console.log("test");
-  // }
+  };  
+
+  componentDidMount() {
+    try {
+        const localToken = TokenServices.getAuthToken();
+        const id = TokenServices.decodeToken(localToken).id;
+        this.setState({ id: id, token: localToken });
+        ApiServices.getUser(
+            // email: testwy1@test.com
+            // password: 123
+            id,
+            `bearer ${localToken}`
+        ).then((data) => {
+            this.setState({ items: data.user.pantry });
+        });
+    } catch (e) {}
+}
 
   componentDidUpdate() {    
     if (this.state.id === "" && this.state.token === "") {
@@ -81,7 +95,12 @@ export default class App extends React.Component {
                 </Link>
               </div>
               <div className="item-double">
-                <Nav />
+                <Nav 
+                  setItems={this.setItems}
+                  setId={this.setId}
+                  setToken={this.setToken}
+                  setSearchTerm={this.setSearchTerm}
+                />
               </div>
             </div>
           </header>
@@ -103,9 +122,9 @@ export default class App extends React.Component {
           <Route exact path="/addItem">
             <AddItemFeature {...this.state} />
           </Route>
-          {/* <Route path='/Grocery-List'>
+          <Route path='/grocery-List'>
             <GroceryList />
-          </Route>    */}
+          </Route>   
         </main>
         <Footer />
       </div>
