@@ -26,7 +26,7 @@ const ItemSearch = () => {
     }
 
     return (
-        <div>
+        <div className="add-item-container">
             <form>
                 <label htmlFor="searchBar">Look For An Item:</label>
                 <input

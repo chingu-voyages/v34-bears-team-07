@@ -4,9 +4,9 @@ import "./AddItemFeature.css";
 
 function AddItemFeature() {
     return (
-        <div className="add-item-container">
-            <ItemSearch />
+        <div className="add-item-main-container">
             <ItemsToAdd />
+            <ItemSearch />
         </div>
     );
 }

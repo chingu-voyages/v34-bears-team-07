@@ -15,7 +15,9 @@ function Nav(props) {
   return (
     <div className="Nav">
       <nav>
-        <ul id="menu">          
+        <ul 
+        // className= "hide" 
+        id="menu">          
           <li>
             <Link to="/dashboard">My Pantry</Link>
           </li>          

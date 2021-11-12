@@ -43,11 +43,18 @@ function Login(props) {
         <div className="login center">
           <form onSubmit={handleSubmit}>
             <div className="login-container">
-              {/* <label htmlFor="email">Email</label> */}
+              <label className="hide" htmlFor="email">
+                Email
+              </label>
               <input type="text" id="email" name="email" placeholder="Email" />
-              {/* <label htmlFor="password" id="password" name="password">
+              <label
+                className="hide"
+                htmlFor="password"
+                id="password"
+                name="password"
+              >
                 Password
-              </label> */}
+              </label>
               <input
                 type="password"
                 id="password"

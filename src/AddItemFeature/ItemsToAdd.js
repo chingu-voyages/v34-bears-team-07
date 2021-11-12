@@ -40,7 +40,7 @@ export default function ItemsToAdd() {
   };
 
   return (
-    <div>
+    <div className="add-item-container">
       <h2>Items To Add</h2>
       {Object.keys(items).length === 0 ? (
         <h3>There is no item to add</h3>

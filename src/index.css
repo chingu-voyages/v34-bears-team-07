@@ -405,6 +405,23 @@ input[type="range"] {
   padding-bottom: 1.5rem;
 }
 
+.hide {
+display: none;
+}
+
+/* Add Item Styling */
+.add-item-container {
+  margin: 1rem;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-item-container > ul {
+padding: 0;
+}
+
 /* Groups & Items  (Mobile First) */
 
 .group {
@@ -421,10 +438,6 @@ input[type="range"] {
   flex: 2;
   margin: 10px;
 }
-/* 
-#menu {
-  display: none;
-} */
 
 /* Groups & Items  (Desktop) */
 
