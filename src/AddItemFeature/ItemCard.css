@@ -1,5 +1,5 @@
 .item-card-wrapper {
-    background-color: hsla(85, 100%, 60%, 0.5);
+    background-color: var(--container-bg);
     display: flex;
     align-items: center;
     justify-content: space-between;

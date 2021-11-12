@@ -41,15 +41,19 @@ export default function ItemsToAdd() {
 
   return (
     <div className="add-item-container">
-      <h2>Items To Add</h2>
+      <h1>Items To Add</h1>
       {Object.keys(items).length === 0 ? (
-        <h3>There is no item to add</h3>
+        <p>There are no items to add</p>
       ) : (
-        <div>
+        <div className="add-item-buttons">
           {itemGrid}
-          <button onClick={handleAddToDB}>Add To Pantry</button>
+          <button className="button-top-container" onClick={handleAddToDB}>
+            Add To Pantry
+          </button>
           {/* <button onClick={handleAddToGrocery}>Add To Grocery</button> */}
-          <button onClick={handleClearList}>Clear List</button>
+          <button className="button-top-container" onClick={handleClearList}>
+            Clear List
+          </button>
         </div>
       )}
     </div>

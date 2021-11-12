@@ -18,6 +18,9 @@ function Dashboard(props) {
       <div className="group">
         <section className="item-double current-items ">
           <h2 className="center">Current Items</h2>
+          <button className="button-base-center center-button" onClick={handleClick} type="button">
+          Add Items
+          </button>
           <br />
           <div className="form-section">
             <form
@@ -39,16 +42,16 @@ function Dashboard(props) {
             ))}
           </div>
         </section>
-
+        {/* 
         <section className="add-icon item-single add-items">
           <h2 className="center">Add Items</h2>
           <br />
           <div className="center">
             <button onClick={handleClick} type="button">
-              <i className="fa fa-plus center"></i>
+              <i className="fa fa-plus center"></i>Add Items
             </button>            
           </div>
-        </section>
+        </section> */}
       </div>
     </section>
   );

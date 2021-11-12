@@ -20,7 +20,7 @@ function Item(props) {
 };
 
   return (
-    <section className="form-section">
+    <section className="form-section light-gray-bg">
       <div className="group spaced">
         <div className="item center">
           <h2>{`${newItemName}`}</h2>

@@ -10,18 +10,22 @@ function ItemToAddCard({ item }) {
         dispatch(removeItem(item.itemId));
     };
     return isEditing ? (
-        <EditItemForm item={item} setIsEditing={setIsEditing} />
+      <EditItemForm item={item} setIsEditing={setIsEditing} />
     ) : (
-        <div className="item-to-add-card-container">
-            <div>
-                {item.itemName}: {item.qty}
-            </div>
-            <small>
-                Purchase Date:{item.purchaseDate.toLocaleDateString()}
-            </small>
-            <button onClick={() => setIsEditing(true)}>Edit</button>
-            <button onClick={handleRemove}>Remove</button>
+      <div className="item-to-add-card-container">
+        <div>
+          {item.itemName}: {item.qty}
         </div>
+        <small>Purchase Date:{item.purchaseDate.toLocaleDateString()}</small>
+        <br />
+        <button
+          className="button-top-container"
+          onClick={() => setIsEditing(true)}
+        >
+          Edit
+        </button>
+        <button className="button-top-container" onClick={handleRemove}>Remove</button>
+      </div>
     );
 }
 

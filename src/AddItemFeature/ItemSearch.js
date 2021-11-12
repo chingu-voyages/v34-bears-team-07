@@ -28,8 +28,8 @@ const ItemSearch = () => {
     return (
         <div className="add-item-container">
             <form>
-                <label htmlFor="searchBar">Look For An Item:</label>
-                <input
+                <label htmlFor="searchBar"><h2>Look For An Item:</h2></label>
+                <div className="add-item-header"><input
                     id="searchBar"
                     type="text"
                     placeholder="search keyword"
@@ -39,6 +39,7 @@ const ItemSearch = () => {
                     value={text}
                     ref={inputEl}
                 />
+                </div>
             </form>
             {items && items.length ? (
                 <ul>

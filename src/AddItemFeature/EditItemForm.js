@@ -38,30 +38,38 @@ function EditItemForm({ item, setIsEditing }) {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <h2>{item.itemName}</h2>
+      <div className="add-item-container">
+        <form onSubmit={handleSubmit}>
+          <h2>{item.itemName}</h2>
 
-                <label htmlFor="qty">Quantity:</label>
-                <input
-                    id="qty"
-                    type="number"
-                    name="qty"
-                    min="1"
-                    value={formData.qty}
-                    onChange={handleChange}
-                />
-                <label htmlFor="PurchaseDate">Puchase Date:</label>
-                <input
-                    type="date"
-                    name="purchaseDate"
-                    value={formData.purchaseDate}
-                    onChange={handleChange}
-                />
-                <button type="submit">Update</button>
-                <button onClick={() => setIsEditing(false)}>Cancel</button>
-            </form>
-        </div>
+          <label htmlFor="qty">Quantity:</label>
+          <input
+            id="qty"
+            type="number"
+            name="qty"
+            min="1"
+            value={formData.qty}
+            onChange={handleChange}
+          />
+          <label htmlFor="PurchaseDate">Purchase Date:</label>
+          <input
+            type="date"
+            name="purchaseDate"
+            value={formData.purchaseDate}
+            onChange={handleChange}
+          />
+          <br />
+          <button className="button-top-container" type="submit">
+            Update
+          </button>
+          <button
+            className="button-top-container"
+            onClick={() => setIsEditing(false)}
+          >
+            Cancel
+          </button>
+        </form>
+      </div>
     );
 }
 
