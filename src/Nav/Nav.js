@@ -19,9 +19,9 @@ function Nav(props) {
           <li>
             <Link to="/dashboard">My Pantry</Link>
           </li>          
-          <li>
+          {/* <li>
             <Link to="/grocery-List">Grocery List</Link>
-          </li>
+          </li> */}
           {!TokenServices.hasAuthToken() && (
             <li>
               <Link to="/login">Login</Link>

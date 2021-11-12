@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Link } from "react-router-dom";
 import Nav from "./Nav/Nav";
 import LandingPage from './LandingPage/LandingPage';
-import GroceryList from './GroceryList/GroceryList';
+// import GroceryList from './GroceryList/GroceryList';
 import Login from "./Login/Login";
 import AddItemFeature from "./AddItemFeature/AddItemFeature";
 import Dashboard from "./Dashboard/Dashboard";
@@ -122,9 +122,12 @@ export default class App extends React.Component {
           <Route exact path="/addItem">
             <AddItemFeature {...this.state} />
           </Route>
-          <Route path='/grocery-List'>
-            <GroceryList />
-          </Route>   
+          {/* <Route path='/grocery-List'>
+            <GroceryList 
+              setSearchTerm={this.setSearchTerm}
+              items={this.search()}
+            />
+          </Route>    */}
         </main>
         <Footer />
       </div>

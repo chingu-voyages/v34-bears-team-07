@@ -2,7 +2,6 @@ import React from "react";
 import "./Dashboard.css";
 import Item from "../Item/Item";
 import { useHistory } from "react-router-dom";
-// import AddItemFeature from "../AddItemFeature/AddItemFeature";
 
 function Dashboard(props) {
   let history = useHistory();
