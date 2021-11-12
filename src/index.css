@@ -402,6 +402,7 @@ input[type="range"] {
   max-width: 700px;
   width:100%;
   padding: 0 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 /* Groups & Items  (Mobile First) */
