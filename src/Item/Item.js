@@ -22,28 +22,29 @@ function Item(props) {
   return (
     <section className="form-section light-gray-bg">
       <div className="group spaced">
-        <div className="item center">
+        <div className="item-double center">
           <h2>{`${newItemName}`}</h2>
         </div>
-        <div className="item">
+        <div className="item-single center">
           <h3>
             DOP
             <p className="center"> {`${purchaseDate}`}</p>
           </h3>
         </div>
-        <div className="item">
+        <div className="item-single center">
           <h3>
             EXP
             <p className="center">{expireDate}</p>
           </h3>
         </div>
-        <div className="item">
+        <div className="item-single center">
           <h3>
             QTY
             <p className="center">{props.item.qty}</p>
           </h3>
         </div>
-        <div className="remove item to-right">
+        <div className="remove item-single center">
+        <br />
           <button 
             type="button" 
             className="center-button" 
