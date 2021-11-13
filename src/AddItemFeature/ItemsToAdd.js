@@ -45,16 +45,16 @@ export default function ItemsToAdd() {
       {Object.keys(items).length === 0 ? (
         <p>There are no items to add</p>
       ) : (
-        <div className="add-item-buttons">
-          {itemGrid}
-          <button className="button-top-container" onClick={handleAddToDB}>
-            Add To Pantry
-          </button>
-          {/* <button onClick={handleAddToGrocery}>Add To Grocery</button> */}
-          <button className="button-top-container" onClick={handleClearList}>
-            Clear List
-          </button>
-        </div>
+          <div className="add-item-buttons">
+            {itemGrid}
+            <button className="button-top-container" onClick={handleAddToDB}>
+              Add To Pantry
+            </button>
+            {/* <button onClick={handleAddToGrocery}>Add To Grocery</button> */}
+            <button className="button-top-container" onClick={handleClearList}>
+              Clear List
+            </button>
+          </div>
       )}
     </div>
   );

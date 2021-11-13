@@ -12,6 +12,7 @@ function ItemToAddCard({ item }) {
     return isEditing ? (
       <EditItemForm item={item} setIsEditing={setIsEditing} />
     ) : (
+        <section className="light-gray-bg">
       <div className="item-to-add-card-container">
         <div>
           {item.itemName}: {item.qty}
@@ -26,6 +27,7 @@ function ItemToAddCard({ item }) {
         </button>
         <button className="button-top-container" onClick={handleRemove}>Remove</button>
       </div>
+      </section>
     );
 }
 
