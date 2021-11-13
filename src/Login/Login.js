@@ -7,7 +7,6 @@ import "./Login.css";
 function Login(props) {
   const history = useHistory();
   const [error, setError] = useState("");
-  // Make react controlled form
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +23,6 @@ function Login(props) {
         props.setId(TokenServices.decodeToken(res.token).id);
         props.setToken(res.token);
         history.push("/dashboard");
-        // window.location = "/dashboard";
       })
 
       .catch((res) => {

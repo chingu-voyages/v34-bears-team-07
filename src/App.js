@@ -13,6 +13,7 @@ import TokenServices from "./tokenServices";
 
 export default class App extends React.Component {
   state = {
+    groceryItems: [],
     items: [],
     searchTerm: "",
     id: "",
@@ -31,7 +32,10 @@ export default class App extends React.Component {
         id,
         `bearer ${localToken}`
       ).then((data) => {
-        this.setState({ items: data.user.pantry });
+        this.setState({
+          items: data.user.pantry,
+          groceryItems: data.user.cart,
+        });
       });
     } catch (e) {}
   }
@@ -46,7 +50,7 @@ export default class App extends React.Component {
       this.state.id,
       `bearer ${this.state.token}`
     ).then((data) => {
-      this.setState({ items: data.user.pantry });
+      this.setState({ items: data.user.pantry, groceryItems: data.user.cart });
     });
   }
 
@@ -67,6 +71,12 @@ export default class App extends React.Component {
     );
   };
 
+  grocerySearch = () => {
+    return this.state.groceryItems.filter((item) =>
+      item.itemName.toLowerCase().includes(this.state.searchTerm)
+    );
+  };
+
   setSearchTerm = (term) => {
     this.setState({ searchTerm: term });
   };
@@ -81,6 +91,10 @@ export default class App extends React.Component {
 
   setItems = (newItems) => {
     this.setState({ items: newItems });
+  };
+
+  setGroceryItems = (newGroceryItems) => {
+    this.setState({ groceryItems: newGroceryItems });
   };
 
   render() {
@@ -125,7 +139,7 @@ export default class App extends React.Component {
           <Route path="/grocery-List">
             <GroceryList
               setSearchTerm={this.setSearchTerm}
-              items={this.search()}
+              items={this.grocerySearch()}
             />
           </Route>
         </main>
