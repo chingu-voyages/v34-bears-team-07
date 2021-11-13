@@ -6,10 +6,16 @@ function GroceryItem(props) {
   const newGroceryItemName =
     props.item.itemName.charAt(0).toUpperCase() + props.item.itemName.slice(1);
 
-  const handleAdd = () => {
+  const handleAddToPantry = () => {
     const userId = TokenServices.decodeToken().id;
     const token = TokenServices.getAuthToken();
     // ApiServices.deleteItem(userId, token, props.item._id);
+  };
+
+  const handleDelete = () => {
+    const userId = TokenServices.decodeToken().id;
+    const token = TokenServices.getAuthToken();
+    ApiServices.deleteGroceryItem(userId, token, props.item._id);
   };
 
   return (
@@ -24,9 +30,22 @@ function GroceryItem(props) {
             <p className="center">{props.item.qty}</p>
           </h3>
         </div>
-        <div className="add item to-right">
-          <button type="button" className="center-button" onClick={handleAdd}>
-            <i className="fa fa-plus"></i>
+        <div className="add item center">
+          <button
+            type="button"
+            className="center-button"
+            onClick={handleAddToPantry}
+          >
+            <i className="fa fa-minus"></i>
+          </button>
+        </div>
+        <div className="add item center">
+          <button
+            type="button"
+            className="center-button"
+            onClick={handleDelete}
+          >
+            Delete
           </button>
         </div>
       </div>
