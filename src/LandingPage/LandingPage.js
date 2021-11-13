@@ -18,18 +18,20 @@ function LandingPage() {
           </h4>
         </div>
       </div>
+      <h1>How does it work?</h1>
       <div className="instructions">
-        <h1>How does it work?</h1>
         <div className="step">
           <img
             src={process.env.PUBLIC_URL + "imgs/additems.png"}
             alt="assortment of groceries"
             className="small-img"
           />
-          <h3>
-            Search our extensive database for every day food items and add them
-            to your personal pantry.
-          </h3>
+          <div className="text">
+            <h3>
+              Search our extensive database for every day food items and add
+              them to your personal pantry.
+            </h3>
+          </div>
         </div>
         <div className="step">
           <img
@@ -48,18 +50,18 @@ function LandingPage() {
             alt="assortment of groceries"
             className="small-img"
           />
-          <h3>
+          <h3 className="text">
             Search and remove items from your pantry to guide your next grocery
             list.
           </h3>
         </div>
         <div className="step">
           <img
-            src={process.env.PUBLIC_URL + "imgs/cartsmall.jpg"}
+            src={process.env.PUBLIC_URL + "imgs/carts.png"}
             alt="assortment of groceries"
             className="small-img"
           />
-          <h3>
+          <h3 className="text">
             Removed items will automatically appear in your shopping cart in a
             checklist format.
           </h3>
@@ -70,7 +72,7 @@ function LandingPage() {
             alt="assortment of groceries"
             className="small-img"
           />
-          <h3>
+          <h3 className="text">
             When checked off, items will be added to your pantry again for easy
             tracking!
           </h3>
