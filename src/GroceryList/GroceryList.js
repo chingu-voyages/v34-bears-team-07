@@ -32,8 +32,8 @@ function GroceryList(props) {
               </button>
             </form>
           </div>
-          <div className="center">
-            <button onClick={handleClick} type="button">
+          <div >
+            <button className="button-base-center center-button" onClick={handleClick} type="button">
               Add Items
             </button>
           </div>

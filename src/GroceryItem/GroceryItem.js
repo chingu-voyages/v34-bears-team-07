@@ -25,13 +25,13 @@ function GroceryItem(props) {
   return (
     <section className="form-section light-gray-bg">
       <div className="group spaced">
-      <div className="remove item-single center">
+      <div className="add-pantry item-single center">        
           <button
             type="button"
             className="center-button"
             onClick={handleAddToPantry}
           >
-            <i className="fa fa-minus"></i>
+            Add To Pantry
           </button>
         </div>
         <div className="item-double center">
