@@ -11,7 +11,7 @@ const ItemSearch = () => {
             if (text.trim().length) {
                 let searchRes = await ApiServices.getItems(text);
                 if (text === inputEl.current.value) {
-                    searchRes = searchRes.slice(0,8)
+                    searchRes = searchRes.slice(0,4)
                     setItems(searchRes);
                 }
             } else {

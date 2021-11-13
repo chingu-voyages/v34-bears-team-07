@@ -18,10 +18,6 @@ function Dashboard(props) {
       <div className="group">
         <section className="item-double current-items ">
           <h2 className="center">Current Items</h2>
-          <button className="button-base-center center-button" onClick={handleClick} type="button">
-          Add Items
-          </button>
-          <br />
           <div className="form-section">
             <form
               className="search center"
@@ -33,9 +29,14 @@ function Dashboard(props) {
               <input type="text" placeholder="Search.." name="search" />
               <button type="submit">
                 <i className="fa fa-search"></i>
+
               </button>
             </form>
           </div>
+          <button className="button-base-center center-button" onClick={handleClick} type="button">
+          Add Items
+          </button>
+          <br />
           <div>
             {props.items.map((item, idx) => (
               <Item key={idx} item={item} />
