@@ -16,7 +16,7 @@ function GroceryList(props) {
 
       <div className="group">
         <section className="item-double current-items ">
-          <h2 className="center">Current Items</h2>
+          <h2 className="center">Items To Purchase</h2>
           <br />
           <div className="form-section">
             <form
@@ -32,22 +32,17 @@ function GroceryList(props) {
               </button>
             </form>
           </div>
+          <div className="center">
+            <button onClick={handleClick} type="button">
+              Add Items
+            </button>
+          </div>
           <div>
             {props.items.map((item, idx) => (
               <GroceryItem key={idx} item={item} />
             ))}
           </div>
-        </section>
-
-        <section className="add-icon item-single add-items">
-          <h2 className="center">Add Items</h2>
-          <br />
-          <div className="center">
-            <button onClick={handleClick} type="button">
-              <i className="fa fa-plus center"></i>
-            </button>
-          </div>
-        </section>
+        </section>        
       </div>
     </section>
   );
