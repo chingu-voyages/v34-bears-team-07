@@ -23,8 +23,7 @@ function Login(props) {
         TokenServices.saveAuthToken(res.token);
         props.setId(TokenServices.decodeToken(res.token).id);
         props.setToken(res.token);
-        // history.push("/");
-        window.location = "/dashboard";
+        history.push("/dashboard");
       })
 
       .catch((res) => {
