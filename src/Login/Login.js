@@ -5,7 +5,7 @@ import TokenServices from "../tokenServices";
 import "./Login.css";
 
 function Login(props) {
-  // const history = useHistory();
+  const history = useHistory();
   const [error, setError] = useState("");
   // Make react controlled form
 
@@ -23,8 +23,8 @@ function Login(props) {
         TokenServices.saveAuthToken(res.token);
         props.setId(TokenServices.decodeToken(res.token).id);
         props.setToken(res.token);
-        // history.push("/");
-        window.location = "/dashboard";
+        history.push("/dashboard");
+        // window.location = "/dashboard";
       })
 
       .catch((res) => {

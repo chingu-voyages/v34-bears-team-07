@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
 import Nav from "./Nav/Nav";
-import LandingPage from './LandingPage/LandingPage';
-// import GroceryList from './GroceryList/GroceryList';
+import LandingPage from "./LandingPage/LandingPage";
+import GroceryList from "./GroceryList/GroceryList";
 import Login from "./Login/Login";
 import AddItemFeature from "./AddItemFeature/AddItemFeature";
 import Dashboard from "./Dashboard/Dashboard";
@@ -18,25 +18,25 @@ export default class App extends React.Component {
     id: "",
     token: "",
     msg: "",
-  };  
+  };
 
   componentDidMount() {
     try {
-        const localToken = TokenServices.getAuthToken();
-        const id = TokenServices.decodeToken(localToken).id;
-        this.setState({ id: id, token: localToken });
-        ApiServices.getUser(
-            // email: testwy1@test.com
-            // password: 123
-            id,
-            `bearer ${localToken}`
-        ).then((data) => {
-            this.setState({ items: data.user.pantry });
-        });
+      const localToken = TokenServices.getAuthToken();
+      const id = TokenServices.decodeToken(localToken).id;
+      this.setState({ id: id, token: localToken });
+      ApiServices.getUser(
+        // email: testwy1@test.com
+        // password: 123
+        id,
+        `bearer ${localToken}`
+      ).then((data) => {
+        this.setState({ items: data.user.pantry });
+      });
     } catch (e) {}
-}
+  }
 
-  componentDidUpdate() {    
+  componentDidUpdate() {
     if (this.state.id === "" && this.state.token === "") {
       return;
     }
@@ -95,7 +95,7 @@ export default class App extends React.Component {
                 </Link>
               </div>
               <div className="item-double">
-                <Nav 
+                <Nav
                   setItems={this.setItems}
                   setId={this.setId}
                   setToken={this.setToken}
@@ -104,9 +104,9 @@ export default class App extends React.Component {
               </div>
             </div>
           </header>
-          <Route exact path='/'>
+          <Route exact path="/">
             <LandingPage />
-          </Route>          
+          </Route>
           <Route exact path="/dashboard">
             <Dashboard
               setSearchTerm={this.setSearchTerm}
@@ -122,12 +122,12 @@ export default class App extends React.Component {
           <Route exact path="/addItem">
             <AddItemFeature {...this.state} />
           </Route>
-          {/* <Route path='/grocery-List'>
-            <GroceryList 
+          <Route path="/grocery-List">
+            <GroceryList
               setSearchTerm={this.setSearchTerm}
               items={this.search()}
             />
-          </Route>    */}
+          </Route>
         </main>
         <Footer />
       </div>

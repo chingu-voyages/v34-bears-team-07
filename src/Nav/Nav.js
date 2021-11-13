@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Nav.css";
 import TokenServices from "../tokenServices";
 
@@ -15,15 +15,16 @@ function Nav(props) {
   return (
     <div className="Nav">
       <nav>
-        <ul 
-        // className= "hide" 
-        id="menu">          
+        <ul
+          // className= "hide"
+          id="menu"
+        >
           <li>
             <Link to="/dashboard">My Pantry</Link>
-          </li>          
-          {/* <li>
+          </li>
+          <li>
             <Link to="/grocery-List">Grocery List</Link>
-          </li> */}
+          </li>
           {!TokenServices.hasAuthToken() && (
             <li>
               <Link to="/login">Login</Link>
