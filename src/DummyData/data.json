@@ -1,0 +1,102 @@
+{    
+    "items": [
+      {
+        "id": "1",
+        "name": "hot sauce",
+        "purchaseDate": "2019-01-03T00:00:00.000Z",
+        "expirationDate": "2019-01-03T00:00:00.000Z",
+        "quantity": "1"
+      },
+      {
+        "id": "2",
+        "name": "limes",
+        "purchaseDate": "2018-08-15T23:00:00.000Z",
+        "expirationDate": "2019-01-03T00:00:00.000Z",
+        "quantity": "1"
+      },
+      {
+        "id": "3",
+        "name": "chips",
+        "purchaseDate": "2018-03-01T00:00:00.000Z",
+        "expirationDate": "2019-01-03T00:00:00.000Z",
+        "quantity": "1"
+      },
+      {
+        "id": "4",
+        "name": "ramen",
+        "purchaseDate": "2019-01-04T00:00:00.000Z",
+        "expirationDate": "2019-01-03T00:00:00.000Z",
+        "quantity": "1"
+      },
+      {
+        "id": "5",
+        "name": "milk",
+        "purchaseDate": "2018-07-12T23:00:00.000Z",
+        "expirationDate": "2019-01-03T00:00:00.000Z",
+        "quantity": "1"
+      },
+      {
+        "id": "6",
+        "name": "eggs",
+        "purchaseDate": "2018-08-20T23:00:00.000Z",
+        "expirationDate": "2019-01-03T00:00:00.000Z",
+        "quantity": "1"
+      },
+      {
+        "id": "7",
+        "name": "ketchup",
+        "purchaseDate": "2018-03-03T00:00:00.000Z",
+        "expirationDate": "2019-01-03T00:00:00.000Z",
+        "quantity": "1"
+      },
+      {
+        "id": "8",
+        "name": "sour cream",
+        "purchaseDate": "2018-05-16T23:00:00.000Z",
+        "expirationDate": "2019-01-03T00:00:00.000Z",
+        "quantity": "1"
+      },
+      {
+        "id": "9",
+        "name": "pot stickers",
+        "purchaseDate": "2018-04-11T23:00:00.000Z",
+        "expirationDate": "2019-01-03T00:00:00.000Z",
+        "quantity": "1"
+      },
+      {
+        "id": "10",
+        "name": "strawberry",
+        "purchaseDate": "2018-04-26T23:00:00.000Z",
+        "expirationDate": "2019-01-03T00:00:00.000Z",
+        "quantity": "1"
+      },
+      {
+        "id": "11",
+        "name": "onion",
+        "purchaseDate": "2018-02-05T00:00:00.000Z",
+        "expirationDate": "2019-01-03T00:00:00.000Z",
+        "quantity": "1"
+      },
+      {
+        "id": "12",
+        "name": "water",
+        "purchaseDate": "2018-12-01T00:00:00.000Z",
+        "expirationDate": "2019-01-03T00:00:00.000Z",
+        "quantity": "1"
+      },
+      {
+        "id": "13",
+        "name": "chocolate syrup",
+        "purchaseDate": "2018-09-11T23:00:00.000Z",
+        "expirationDate": "2019-01-03T00:00:00.000Z",
+        "quantity": "1"
+      },
+      {
+        "id": "14",
+        "name": "hotdog buns",
+        "purchaseDate": "2018-08-13T23:00:00.000Z",
+        "expirationDate": "2019-01-03T00:00:00.000Z",
+        "quantity": "1"
+      }
+    ]
+  }
