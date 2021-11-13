@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import ApiServices from "../apiServices";
 import TokenServices from "../tokenServices";
 import "./Login.css";
 
 function Login(props) {
+  const history = useHistory();
   const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
@@ -21,7 +22,7 @@ function Login(props) {
         TokenServices.saveAuthToken(res.token);
         props.setId(TokenServices.decodeToken(res.token).id);
         props.setToken(res.token);
-        window.location = "/dashboard";
+        history.push("/dashboard");
       })
 
       .catch((res) => {
