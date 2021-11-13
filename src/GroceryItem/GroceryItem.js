@@ -1,15 +1,19 @@
-import React from "react";
+import { React } from "react";
 import TokenServices from "../tokenServices";
 import ApiServices from "../apiServices";
+import { useHistory } from "react-router-dom";
 
 function GroceryItem(props) {
+  const history = useHistory();
   const newGroceryItemName =
     props.item.itemName.charAt(0).toUpperCase() + props.item.itemName.slice(1);
 
-  const handleAddToPantry = () => {
+  const handleAddToPantry = async () => {
     const userId = TokenServices.decodeToken().id;
     const token = TokenServices.getAuthToken();
-    // ApiServices.deleteItem(userId, token, props.item._id);
+    await ApiServices.deleteGroceryItem(userId, token, props.item._id);
+    await ApiServices.postAddItem(userId, token, props.item);
+    history.push("/dashboard");
   };
 
   const handleDelete = () => {
