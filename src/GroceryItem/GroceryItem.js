@@ -23,18 +23,9 @@ function GroceryItem(props) {
   };
 
   return (
-    <section className="form-section">
+    <section className="form-section light-gray-bg">
       <div className="group spaced">
-        <div className="item center">
-          <h2>{`${newGroceryItemName}`}</h2>
-        </div>
-        <div className="item">
-          <h3>
-            QTY
-            <p className="center">{props.item.qty}</p>
-          </h3>
-        </div>
-        <div className="add item center">
+      <div className="remove item-single center">
           <button
             type="button"
             className="center-button"
@@ -43,7 +34,16 @@ function GroceryItem(props) {
             <i className="fa fa-minus"></i>
           </button>
         </div>
-        <div className="add item center">
+        <div className="item-double center">
+          <h2>{`${newGroceryItemName}`}</h2>
+        </div>
+        <div className="item-single center">
+          <h3>
+            QTY
+            <p className="center">{props.item.qty}</p>
+          </h3>
+        </div>        
+        <div className="remove-grocery item-single center">
           <button
             type="button"
             className="center-button"
