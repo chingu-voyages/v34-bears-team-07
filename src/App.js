@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Link } from "react-router-dom";
 import Nav from "./Nav/Nav";
 import LandingPage from "./LandingPage/LandingPage";
+import GroceryList from "./GroceryList/GroceryList";
 import Login from "./Login/Login";
 import AddItemFeature from "./AddItemFeature/AddItemFeature";
 import Dashboard from "./Dashboard/Dashboard";
@@ -12,6 +13,7 @@ import TokenServices from "./tokenServices";
 
 export default class App extends React.Component {
   state = {
+    groceryItems: [],
     items: [],
     searchTerm: "",
     id: "",
@@ -24,8 +26,14 @@ export default class App extends React.Component {
       const localToken = TokenServices.getAuthToken();
       const id = TokenServices.decodeToken(localToken).id;
       this.setState({ id: id, token: localToken });
-      ApiServices.getUser(id, `bearer ${localToken}`).then((data) => {
-        this.setState({ items: data.user.pantry });
+      ApiServices.getUser(
+        id,
+        `bearer ${localToken}`
+      ).then((data) => {
+        this.setState({
+          items: data.user.pantry,
+          groceryItems: data.user.cart,
+        });
       });
     } catch (e) {}
   }
@@ -34,11 +42,12 @@ export default class App extends React.Component {
     if (this.state.id === "" && this.state.token === "") {
       return;
     }
-    ApiServices.getUser(this.state.id, `bearer ${this.state.token}`).then(
-      (data) => {
-        this.setState({ items: data.user.pantry });
-      }
-    );
+    ApiServices.getUser(
+      this.state.id,
+      `bearer ${this.state.token}`
+    ).then((data) => {
+      this.setState({ items: data.user.pantry, groceryItems: data.user.cart });
+    });
   }
 
   addItem = (item) => {
@@ -57,6 +66,12 @@ export default class App extends React.Component {
     );
   };
 
+  grocerySearch = () => {
+    return this.state.groceryItems.filter((item) =>
+      item.itemName.toLowerCase().includes(this.state.searchTerm)
+    );
+  };
+
   setSearchTerm = (term) => {
     this.setState({ searchTerm: term });
   };
@@ -71,6 +86,10 @@ export default class App extends React.Component {
 
   setItems = (newItems) => {
     this.setState({ items: newItems });
+  };
+
+  setGroceryItems = (newGroceryItems) => {
+    this.setState({ groceryItems: newGroceryItems });
   };
 
   render() {
@@ -111,6 +130,12 @@ export default class App extends React.Component {
           </Route>
           <Route exact path="/addItem">
             <AddItemFeature {...this.state} />
+          </Route>
+          <Route path="/grocery-List">
+            <GroceryList
+              setSearchTerm={this.setSearchTerm}
+              items={this.grocerySearch()}
+            />
           </Route>
         </main>
         <Footer />

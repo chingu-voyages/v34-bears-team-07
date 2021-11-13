@@ -25,6 +25,16 @@ export default function ItemsToAdd() {
     history.push("/dashboard");
   };
 
+  const handleAddToGrocery = () => {
+    ApiServices.postAddGroceryItem(
+      TokenServices.decodeToken().id,
+      TokenServices.getAuthToken(),
+      Object.values(items)
+    );
+    dispatch(clearList());
+    history.push("/grocery-list");
+  };
+
   const handleClearList = () => {
     dispatch(clearList());
   };
@@ -38,9 +48,9 @@ export default function ItemsToAdd() {
         <div className="add-item-buttons">
           {itemGrid}
           <button className="button-top-container" onClick={handleAddToDB}>
-            Add To Pantry
+            + To Pantry
           </button>
-          {/* <button onClick={handleAddToGrocery}>Add To Grocery</button> */}
+          <button onClick={handleAddToGrocery}>+ To Grocery List</button>
           <button className="button-top-container" onClick={handleClearList}>
             Clear List
           </button>

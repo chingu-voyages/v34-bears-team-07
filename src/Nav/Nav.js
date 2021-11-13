@@ -16,9 +16,16 @@ function Nav(props) {
     <div className="Nav">
       <nav>
         <ul id="menu">
-          <li>
-            <Link to="/dashboard">My Pantry</Link>
-          </li>
+          {TokenServices.hasAuthToken() && (
+            <li>
+              <Link to="/dashboard">My Pantry</Link>
+            </li>
+          )}
+          {TokenServices.hasAuthToken() && (
+            <li>
+              <Link to="/grocery-List">Grocery List</Link>
+            </li>
+          )}
           {!TokenServices.hasAuthToken() && (
             <li>
               <Link to="/login">Login</Link>
