@@ -23,7 +23,7 @@ function LandingPage() {
         <div className="step">
           <img
             src={process.env.PUBLIC_URL + "imgs/additems.png"}
-            alt="assortment of groceries"
+            alt="search feature to add items"
             className="small-img"
           />
           <div className="text">
@@ -35,19 +35,19 @@ function LandingPage() {
         </div>
         <div className="step">
           <img
-            src={process.env.PUBLIC_URL + "imgs/pantryitem.png"}
-            alt="assortment of groceries"
+            src={process.env.PUBLIC_URL + "imgs/pantry.png"}
+            alt="list of items added to pantry"
             className="small-img"
           />
           <h3>
-            Visualize your pantry with date of purchase and estimated expiration
-            date.
+            Visualize your pantry with date of purchase, estimated expiration
+            date, and quantity.
           </h3>
         </div>
         <div className="step">
           <img
-            src={process.env.PUBLIC_URL + "imgs/currentitems.png"}
-            alt="assortment of groceries"
+            src={process.env.PUBLIC_URL + "imgs/remove.png"}
+            alt="list of items added to pantry with remove button highlighted"
             className="small-img"
           />
           <h3 className="text">
@@ -57,24 +57,24 @@ function LandingPage() {
         </div>
         <div className="step">
           <img
-            src={process.env.PUBLIC_URL + "imgs/carts.png"}
-            alt="assortment of groceries"
+            src={process.env.PUBLIC_URL + "imgs/grocerylist.png"}
+            alt="grocery list"
             className="small-img"
           />
           <h3 className="text">
-            Removed items will automatically appear in your shopping cart in a
-            checklist format.
+            When you remove an item, it will automatically appear in the grocery
+            list page.
           </h3>
         </div>
         <div className="step">
           <img
-            src={process.env.PUBLIC_URL + "imgs/listsmall.jpg"}
-            alt="assortment of groceries"
+            src={process.env.PUBLIC_URL + "imgs/addtopantry.png"}
+            alt="grocery list with add to pantry button highlighted"
             className="small-img"
           />
           <h3 className="text">
-            When checked off, items will be added to your pantry again for easy
-            tracking!
+            Utilize your grocery list on a shopping trip and add items to your
+            pantry with a click of a button!
           </h3>
         </div>
       </div>
