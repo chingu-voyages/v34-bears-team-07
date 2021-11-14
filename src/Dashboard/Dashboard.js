@@ -5,9 +5,9 @@ import { useHistory } from "react-router-dom";
 
 function Dashboard(props) {
   let history = useHistory();
-    function handleClick() {
-        history.push("/additem");
-    }
+  function handleClick() {
+    history.push("/additem");
+  }
 
   return (
     <section className="main">
@@ -29,37 +29,26 @@ function Dashboard(props) {
               <input type="text" placeholder="Search.." name="search" />
               <button type="submit">
                 <i className="fa fa-search"></i>
-
               </button>
             </form>
           </div>
-            <button className="button-base-center center-button" onClick={handleClick} type="button">
-                Add Items
-            </button>
+          <button
+            className="button-base-center center-button"
+            onClick={handleClick}
+            type="button"
+          >
+            Add Items
+          </button>
           <br />
-            <div>
-                {props.items.map((item, idx) => (
-                <Item key={idx} item={item} />
-                ))}
-            </div>
-        </section>
-        {/* 
-        <section className="add-icon item-single add-items">
-          <h2 className="center">Add Items</h2>
-          <br />
-          <div className="center">
-            <button onClick={handleClick} type="button">
-              <i className="fa fa-plus center"></i>Add Items
-            </button>            
+          <div>
+            {props.items.map((item, idx) => (
+              <Item key={idx} item={item} />
+            ))}
           </div>
-        </section> */}
+        </section>
       </div>
     </section>
   );
 }
 
-<<<<<<< HEAD
 export default Dashboard;
-=======
-export default Dashboard;
->>>>>>> development

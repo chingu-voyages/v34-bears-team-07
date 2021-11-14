@@ -7,7 +7,6 @@ import { Link, useHistory } from "react-router-dom";
 function SignUp(props) {
   const history = useHistory();
   const [error, setError] = useState("");
-  // Make react controlled form
 
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -26,12 +26,7 @@ export default class App extends React.Component {
       const localToken = TokenServices.getAuthToken();
       const id = TokenServices.decodeToken(localToken).id;
       this.setState({ id: id, token: localToken });
-      ApiServices.getUser(
-        // email: testwy1@test.com
-        // password: 123
-        id,
-        `bearer ${localToken}`
-      ).then((data) => {
+      ApiServices.getUser(id, `bearer ${localToken}`).then((data) => {
         this.setState({
           items: data.user.pantry,
           groceryItems: data.user.cart,
@@ -44,14 +39,14 @@ export default class App extends React.Component {
     if (this.state.id === "" && this.state.token === "") {
       return;
     }
-    ApiServices.getUser(
-      // email: testwy1@test.com
-      // password: 123
-      this.state.id,
-      `bearer ${this.state.token}`
-    ).then((data) => {
-      this.setState({ items: data.user.pantry, groceryItems: data.user.cart });
-    });
+    ApiServices.getUser(this.state.id, `bearer ${this.state.token}`).then(
+      (data) => {
+        this.setState({
+          items: data.user.pantry,
+          groceryItems: data.user.cart,
+        });
+      }
+    );
   }
 
   addItem = (item) => {
