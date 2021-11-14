@@ -2,7 +2,6 @@ import jwt from "jsonwebtoken";
 
 const TokenServices = {
   saveAuthToken(token) {
-    console.log(token);
     window.localStorage.setItem(process.env.REACT_APP_TOKEN_KEY, token);
   },
   getAuthToken() {
