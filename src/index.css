@@ -52,12 +52,12 @@ footer {
 /* ---  Navigation --- */
 .nav-bg {
 background-color: var(--nav-bg);
+padding-bottom: 0;
 }
 
 header nav {
   display: flex;
-  flex-direction: row;
-  justify-content: right;
+  flex-direction: column;
 }
 
 header h1 {
@@ -69,8 +69,9 @@ header h1 {
 }
 
 header nav ul {
+  text-align: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding-bottom: 0;
 }
 
@@ -78,6 +79,9 @@ li {
   list-style-type: none;
 }
 
+header nav ul li {
+  padding: 0.5rem 0;
+}
 header nav ul li a {
   text-decoration: none;
   padding: 0 10px 0 10px;
@@ -528,7 +532,7 @@ padding: 0;
 }
 
 /* tablet */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .LandingPage .banner h1,h4 {
     font-size: medium;
   }
@@ -538,6 +542,7 @@ font-size: 2rem;
 }
 
 #menu {
+  padding:0;
   padding-top: 1rem;
 }
 }
@@ -547,6 +552,14 @@ font-size: 2rem;
   .add-item-main-container {
     width:50%;
     margin: 0 auto;
+}
+
+#menu{
+  justify-content: right;
+}
+
+header nav ul {
+  flex-direction: row;
 }
 }
 
