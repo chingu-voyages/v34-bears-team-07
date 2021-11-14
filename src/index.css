@@ -1,15 +1,15 @@
 :root {
---body-bg: #faf9f8;
---header-footer-text: #757572;
---nav-bg: #446413;
---link-hover:  rgb(235, 233, 233);
---container-bg: rgb(228, 228, 228);
---item-container-bg: #f1f1f1;
---search-input-bg: white;
---login-btn-blue: rgb(0, 136, 255);
---banner-link: #a1c794;
---landing-text: #588748;
---nav-links: white;
+  --body-bg: #faf9f8;
+  --header-footer-text: #757572;
+  --nav-bg: #446413;
+  --link-hover: rgb(235, 233, 233);
+  --container-bg: rgb(228, 228, 228);
+  --item-container-bg: #f1f1f1;
+  --search-input-bg: white;
+  --login-btn-blue: rgb(0, 136, 255);
+  --banner-link: #a1c794;
+  --landing-text: #588748;
+  --nav-links: white;
 }
 
 * {
@@ -18,7 +18,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  margin:0;
+  margin: 0;
   font-size: 20px;
   text-align: left;
   line-height: 1.5;
@@ -51,26 +51,27 @@ footer {
 
 /* ---  Navigation --- */
 .nav-bg {
-background-color: var(--nav-bg);
+  background-color: var(--nav-bg);
+  padding-bottom: 0;
 }
 
 header nav {
   display: flex;
-  flex-direction: row;
-  justify-content: right;
+  flex-direction: column;
 }
 
 header h1 {
   color: var(--header-footer-text);
-  margin:0;
+  margin: 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
 header nav ul {
+  text-align: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding-bottom: 0;
 }
 
@@ -78,6 +79,9 @@ li {
   list-style-type: none;
 }
 
+header nav ul li {
+  padding: 0.5rem 0;
+}
 header nav ul li a {
   text-decoration: none;
   padding: 0 10px 0 10px;
@@ -93,11 +97,11 @@ section {
   box-shadow: 0 0 1px black;
 }
 
-a{
-  color:var(--nav-links);
+a {
+  color: var(--nav-links);
 }
 
-a:link{
+a:link {
   text-decoration: none;
 }
 
@@ -116,7 +120,8 @@ span {
   padding: 0;
 }
 
-p, h2 {
+p,
+h2 {
   margin: 23px 0;
 }
 
@@ -125,7 +130,8 @@ h2 {
   font-size: 20px;
 }
 
-.current-items, .add-items {
+.current-items,
+.add-items {
   background-color: var(--container-bg);
 }
 
@@ -135,7 +141,7 @@ h2 {
   max-width: 650px;
 }
 
-form.search input[type='text'] {
+form.search input[type="text"] {
   padding: 10px;
   font-size: 17px;
   border: 0;
@@ -177,9 +183,9 @@ div.remove button {
   cursor: pointer;
 }
 
-div.remove-grocery button  {
+div.remove-grocery button {
   float: left;
-  width: 43%;
+  width: 170px;
   padding: 4px;
   background: rgb(185, 8, 8);
   color: white;
@@ -188,9 +194,9 @@ div.remove-grocery button  {
   cursor: pointer;
 }
 
-div.add-pantry button  {
+div.add-pantry button {
   float: left;
-  width: 100%;
+  width: 170px;
   padding: 4px;
   background: var(--nav-bg);
   color: white;
@@ -200,7 +206,7 @@ div.add-pantry button  {
 }
 
 form.search::after {
-  content: '';
+  content: "";
   clear: both;
   display: table;
 }
@@ -225,7 +231,7 @@ label {
   display: block;
 }
 
-input[type='range'] {
+input[type="range"] {
   width: 50px;
 }
 
@@ -250,7 +256,7 @@ input[type='range'] {
 
 .spaced {
   display: flex;
-  justify-content: space-around;  
+  justify-content: space-around;
 }
 
 .to-right {
@@ -270,7 +276,7 @@ label p {
 }
 
 p + p {
-  margin-top: 15px;  
+  margin-top: 15px;
 }
 
 form {
@@ -322,12 +328,11 @@ input[type="range"] {
   font-size: 16px;
   border: 1px solid grey;
   border-radius: 5px;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 .login form {
   width: 300px;
-
 }
 
 .register {
@@ -338,7 +343,7 @@ input[type="range"] {
   font-size: 16px;
   border: 1px solid grey;
   border-radius: 5px;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 .login p {
@@ -353,8 +358,8 @@ input[type="range"] {
 }
 
 .LandingPage h1 {
-  margin:1rem 0;
-font-size: 2.5rem;
+  margin: 1rem 0;
+  font-size: 2.5rem;
 }
 
 .LandingPage .flex-container {
@@ -371,7 +376,7 @@ font-size: 2.5rem;
 .LandingPage .banner {
   display: flex;
   flex-wrap: wrap;
-  width:100%;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 0.5em;
   margin-bottom: 0;
@@ -380,8 +385,9 @@ font-size: 2.5rem;
   flex-direction: column;
 }
 
-.banner h1, h4 {
-  color:white;
+.banner h1,
+h4 {
+  color: white;
   margin: 0;
 }
 
@@ -400,30 +406,30 @@ font-size: 2.5rem;
   justify-content: center;
 }
 
-.instructions h1{
+.instructions h1 {
   margin: 1rem auto;
-  color:black;
+  color: black;
 }
 
 .step {
-  display:flex;
+  display: flex;
   flex-direction: column;
   margin: 0.5rem;
-  border: 3px solid #9A9999;
+  border: 3px solid #9a9999;
   border-radius: 25px;
-  width:700px;
-  height:325px;
+  width: 700px;
+  height: 675px;
 }
 
 .LandingPage .small-img {
   max-width: 700px;
-  width:100%;
+  width: 100%;
   padding-bottom: 1.5rem;
   border-radius: 20px;
 }
 
 .hide {
-display: none;
+  display: none;
 }
 
 /* Add Item Styling */
@@ -436,13 +442,13 @@ display: none;
 }
 
 .add-item-container h1 {
-  color: var(--header-footer-text)
+  color: var(--header-footer-text);
 }
 
 .add-item-container h2 {
   padding: 0;
-  margin:0;
-  margin-bottom:1rem;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 .add-item-container form {
@@ -450,23 +456,23 @@ display: none;
 }
 
 .add-item-container button {
-  color:white;
+  color: white;
   background-color: var(--nav-bg);
   padding: 10px;
   font-size: 16px;
   border: 1px solid grey;
   border-radius: 5px;
-  cursor: pointer; 
+  cursor: pointer;
 }
-.button-base-center{
+.button-base-center {
   margin: 0 auto;
-  color:white;
+  color: white;
   background-color: var(--nav-bg);
   padding: 10px;
   font-size: 16px;
   border: 1px solid grey;
   border-radius: 5px;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .button-top-container {
@@ -474,11 +480,11 @@ display: none;
 }
 
 .add-item-buttons {
- text-align: center;
+  text-align: center;
 }
 
 .add-item-container > ul {
-padding: 0;
+  padding: 0;
 }
 
 .add-item-header {
@@ -491,7 +497,7 @@ padding: 0;
 
 .button-wrapper {
   flex: none;
-  min-width:170px;
+  min-width: 170px;
 }
 
 .light-gray-bg {
@@ -528,26 +534,34 @@ padding: 0;
 }
 
 /* tablet */
-@media screen and (max-width: 768px) {
-  .LandingPage .banner h1,h4 {
+@media screen and (max-width: 800px) {
+  .LandingPage .banner h1,
+  h4 {
     font-size: medium;
   }
 
-.LandingPage h1 {
-font-size: 2rem;
-}
+  .LandingPage h1 {
+    font-size: 2rem;
+  }
 
-#menu {
-  padding-top: 1rem;
-}
+  #menu {
+    padding: 0;
+    padding-top: 1rem;
+  }
 }
 
 /* desktop */
 @media screen and (min-width: 1024px) {
   .add-item-main-container {
-    width:50%;
+    width: 50%;
     margin: 0 auto;
-}
-}
+  }
 
+  #menu {
+    justify-content: right;
+  }
 
+  header nav ul {
+    flex-direction: row;
+  }
+}

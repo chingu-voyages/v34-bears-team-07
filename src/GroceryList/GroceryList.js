@@ -15,7 +15,7 @@ function GroceryList(props) {
       </header>
 
       <div className="group">
-        <section className="item-double current-items ">
+        <section className="item-double current-items">
           <h2 className="center">Items To Purchase</h2>
           <br />
           <div className="form-section">
@@ -32,8 +32,12 @@ function GroceryList(props) {
               </button>
             </form>
           </div>
-          <div >
-            <button className="button-base-center center-button" onClick={handleClick} type="button">
+          <div>
+            <button
+              className="button-base-center center-button"
+              onClick={handleClick}
+              type="button"
+            >
               Add Items
             </button>
           </div>
@@ -42,7 +46,7 @@ function GroceryList(props) {
               <GroceryItem key={idx} item={item} />
             ))}
           </div>
-        </section>        
+        </section>
       </div>
     </section>
   );

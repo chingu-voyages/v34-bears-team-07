@@ -43,9 +43,23 @@ function Dashboard(props) {
                 ))}
             </div>
         </section>
+        {/* 
+        <section className="add-icon item-single add-items">
+          <h2 className="center">Add Items</h2>
+          <br />
+          <div className="center">
+            <button onClick={handleClick} type="button">
+              <i className="fa fa-plus center"></i>Add Items
+            </button>            
+          </div>
+        </section> */}
       </div>
     </section>
   );
 }
 
+<<<<<<< HEAD
 export default Dashboard;
+=======
+export default Dashboard;
+>>>>>>> development

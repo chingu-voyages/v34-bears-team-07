@@ -7,6 +7,7 @@ import { Link, useHistory } from "react-router-dom";
 function SignUp(props) {
   const history = useHistory();
   const [error, setError] = useState("");
+  // Make react controlled form
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,21 +46,30 @@ function SignUp(props) {
           <form onSubmit={handleSubmit}>
             <div>
               <div className="login-container">
-                <label className="hide" htmlFor="username" id="username">Email</label>
+                <label className="hide" htmlFor="username" id="username">
+                  Email
+                </label>
                 <input
                   type="text"
                   id="username"
                   name="username"
                   placeholder="Username"
                 />
-                 <label className="hide" htmlFor="email" id="email">Email</label>
+                <label className="hide" htmlFor="email" id="email">
+                  Email
+                </label>
                 <input
                   type="text"
                   id="email"
                   name="email"
                   placeholder="Email"
                 />
-                <label className="hide" htmlFor="password" id="password" name="password">
+                <label
+                  className="hide"
+                  htmlFor="password"
+                  id="password"
+                  name="password"
+                >
                   Password
                 </label>
                 <input

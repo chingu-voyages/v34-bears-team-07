@@ -27,6 +27,8 @@ export default class App extends React.Component {
       const id = TokenServices.decodeToken(localToken).id;
       this.setState({ id: id, token: localToken });
       ApiServices.getUser(
+        // email: testwy1@test.com
+        // password: 123
         id,
         `bearer ${localToken}`
       ).then((data) => {
@@ -43,6 +45,8 @@ export default class App extends React.Component {
       return;
     }
     ApiServices.getUser(
+      // email: testwy1@test.com
+      // password: 123
       this.state.id,
       `bearer ${this.state.token}`
     ).then((data) => {
@@ -58,6 +62,7 @@ export default class App extends React.Component {
     this.setState({
       items: newItems,
     });
+    // add endpoint
   };
 
   search = () => {
