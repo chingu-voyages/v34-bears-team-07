@@ -183,7 +183,7 @@ div.remove button {
 
 div.remove-grocery button  {
   float: left;
-  width: 43%;
+  width: 170px;
   padding: 4px;
   background: rgb(185, 8, 8);
   color: white;
@@ -194,7 +194,7 @@ div.remove-grocery button  {
 
 div.add-pantry button  {
   float: left;
-  width: 100%;
+  width: 170px;
   padding: 4px;
   background: var(--nav-bg);
   color: white;

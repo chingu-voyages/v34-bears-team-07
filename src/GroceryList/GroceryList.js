@@ -15,7 +15,7 @@ function GroceryList(props) {
       </header>
 
       <div className="group">
-        <section className="item-double current-items ">
+        <section className="item-double current-items">
           <h2 className="center">Items To Purchase</h2>
           <br />
           <div className="form-section">
