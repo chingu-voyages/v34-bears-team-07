@@ -2,7 +2,8 @@
 **Chingu (https://chingu.io/) Full-Stack Team Project**- Responsive *Green Design* Application that utilizes handy third-party APIs, alongside APIs that our team created, to conveniently fetch and render a broad range of data (from Food-Items names and catagories to expiration dates) to display a user friendly waste managing tool.  
 
 ## Live Site
-You can find Fridge Raiders at https://fridge-raiders.netlify.app/
+You can find Fridge Raiders' live site at https://fridge-raiders.netlify.app/
+Backend at https://github.com/chingu-voyages/v34-bears-team-07be
 
 ### DashBoard
 ![Fridge Raiders Dashboard](https://github.com/chingu-voyages/v34-bears-team-07/blob/development/public/ReadMe-Images/Fridge-Raiders-Pantry.PNG)
