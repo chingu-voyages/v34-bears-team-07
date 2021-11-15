@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Fridge Raiders
+**Chingu (https://chingu.io/) Full-Stack Team Project**- Responsive *Green Design* Application that utilizes handy third-party APIs, alongside APIs that our team created, to conveniently fetch and render a broad range of data (from Food-Items names and catagories to expiration dates) to display a user friendly waste managing tool.  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live Site
+You can find Fridge Raiders at https://fridge-raiders.netlify.app/
 
-## Available Scripts
+### DashBoard
+![Fridge Raiders Dashboard](https://github.com/chingu-voyages/v34-bears-team-07/blob/development/public/ReadMe-Images/Fridge-Raiders-Pantry.PNG)
+### Grocery List
+![Fridge Raiders Grocery List](https://github.com/chingu-voyages/v34-bears-team-07/blob/development/public/ReadMe-Images/Fridge-Raiders-Grocery-List.PNG)
+### Pre-Item-Search
+![Fridge Raiders Pre-Item-Search](https://github.com/chingu-voyages/v34-bears-team-07/blob/development/public/ReadMe-Images/pre-item-search.PNG)
+### Post-Item-Search
+![Fridge Raiders Post-Item-Search](https://github.com/chingu-voyages/v34-bears-team-07/blob/development/public/ReadMe-Images/post-item-search.PNG)
 
-In the project directory, you can run:
 
-### `npm start`
+## Introduction
+Fridge Raiders gives Users the ability help minimize waste by keeping up with the expiration dates of all the items in their fridge. A User can initially populate their pantry through the **Add Items** feature. Once the User populated their pantry for the first, they are able to continuesly populate it through the **Grocery List** feautre. As the User shops and checks off the items in their grocery list, those items will relocate to the User's current pantry. As items expire in the pantry, the User is able to select between which items they'd like to relocate back to the grocery list and what items should just be deleted. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Use Case
+This application is intended to help User's save money and leave a smaller waste footprint on earth by reducing the amount of food they waste.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## UI & UX Design
+The initial wireframes for the page and the list of results can be seen below.
 
-### `npm test`
+- User Experience
+![Wire Frame](https://github.com/chingu-voyages/v34-bears-team-07/blob/development/public/ReadMe-Images/Fridge-Raiders-UX.PNG)
+- User Interphase
+![Wire Frame](https://github.com/chingu-voyages/v34-bears-team-07/blob/development/public/ReadMe-Images/Fridge-Raiders-UI.PNG)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technical
+* Frontend
+ - HTML, CSS, JAVASCRIPT, REACT, and REACT REDUX.
 
-### `npm run build`
+* Backend
+ - MongoDB, Express, Netlify.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Feutures For The Future
+* Ability to notify users whe nan item is approching the *USE BY* date.
+* Be able to suggest recipes that a User can make with the items that are approching the *USE BY* date.
+* Utilize an AI Builder to Scan Receipts that can then be added to the User's Pantry.
