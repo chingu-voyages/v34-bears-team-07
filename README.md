@@ -35,7 +35,7 @@ The initial wireframes for the page and the list of results can be seen below.
  Backend
  - MongoDB, Express, Netlify.
 
-## Feutures For The Future
+## Features For The Future
 * Ability to notify users whe nan item is approching the *USE BY* date.
 * Be able to suggest recipes that a User can make with the items that are approching the *USE BY* date.
 * Utilize an AI Builder to Scan Receipts that can then be added to the User's Pantry.
