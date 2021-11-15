@@ -29,10 +29,10 @@ The initial wireframes for the page and the list of results can be seen below.
 ![Wire Frame](https://github.com/chingu-voyages/v34-bears-team-07/blob/development/public/ReadMe-Images/Fridge-Raiders-UI.PNG)
 
 ## Technical
-* Frontend
+ Frontend
  - HTML, CSS, JAVASCRIPT, REACT, and REACT REDUX.
 
-* Backend
+ Backend
  - MongoDB, Express, Netlify.
 
 ## Feutures For The Future
