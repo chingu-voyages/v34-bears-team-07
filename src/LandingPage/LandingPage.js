@@ -22,7 +22,7 @@ function LandingPage() {
       <div className="instructions">
         <div className="step">
           <img
-            src={process.env.PUBLIC_URL + "imgs/additems.png"}
+            src={process.env.PUBLIC_URL + "imgs/additemsnew.png"}
             alt="search feature to add items"
             className="small-img"
           />
