@@ -24,9 +24,9 @@ This application is intended to help users save money and leave a smaller waste 
 ## UI & UX Design
 The initial wire frames for the page and the list of results can be seen below.
 
-- user Experience
+- User Experience
 ![Wire Frame](https://github.com/chingu-voyages/v34-bears-team-07/blob/development/public/ReadMe-Images/Fridge-Raiders-UX.PNG)
-- user Interphase
+- User Interphase
 ![Wire Frame](https://github.com/chingu-voyages/v34-bears-team-07/blob/development/public/ReadMe-Images/Fridge-Raiders-UI.PNG)
 
 ## Technical
